@@ -6,7 +6,11 @@ The implementation of TensorEvaluation for NER in our paper:
 
 ## Require
 Python 3.6
+
 texlive 
+
+## Existing Compare Models 
+conll03, LSTM-CNN: https://anonymous4nlp.github.io/analysis/tEval-ner.html
 
 ## Reproducing Results
 Run run_task_ner.sh: ./run_task_ner.sh, and it will generate the html file which is utilized to show the analysis result. 
