@@ -1,7 +1,7 @@
 This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex)
  restricted \write18 enabled.
 entering extended mode
-(./conll03-LSTM-selfdiag.tex
+(./wnut16-LSTM-selfdiag.tex
 LaTeX2e <2018-12-01>
 (/usr/local/texlive/2019/texmf-dist/tex/latex/standalone/standalone.cls
 Document Class: standalone 2018/03/26 v1.3a Class to compile TeX sub-files stan
@@ -264,7 +264,7 @@ s/tikzlibraryarrows.code.tex
 code.tex)))
 (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
 s/tikzlibrarybackgrounds.code.tex)
-No file conll03-LSTM-selfdiag.aux.
+No file wnut16-LSTM-selfdiag.aux.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/ot1lmr.fd)
 (/usr/local/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -288,8 +288,8 @@ s been generated with the most recent feature set (\pgfplotsset{compat=1.16}).
 (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsa.fd)
 (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsb.fd) [1{/usr/local/t
 exlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-(./conll03-LSTM-selfdiag.aux) ){/usr/local/texlive/2019/texmf-dist/fonts/enc/dv
-ips/lm/lm-rm.enc}</usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmr1
-0.pfb>
-Output written on conll03-LSTM-selfdiag.pdf (1 page, 29696 bytes).
-Transcript written on conll03-LSTM-selfdiag.log.
+(./wnut16-LSTM-selfdiag.aux) ){/usr/local/texlive/2019/texmf-dist/fonts/enc/dvi
+ps/lm/lm-rm.enc}</usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmr10
+.pfb>
+Output written on wnut16-LSTM-selfdiag.pdf (1 page, 29640 bytes).
+Transcript written on wnut16-LSTM-selfdiag.log.

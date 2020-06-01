@@ -1,0 +1,80 @@
+\documentclass[11pt]{standalone}
+
+\usepackage{lmodern}	% font definition
+\usepackage{amsmath}	% math fonts
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{pgfplots}
+
+\usepackage{pgfplots}
+\usepackage{xcolor}
+\usetikzlibrary{positioning,bayesnet}
+\definecolor{brinkpink}{rgb}{0.98, 0.38, 0.5}
+\definecolor{aogreen}{rgb}{0.0, 0.5, 0.0}
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathmorphing} % noisy shapes
+\usetikzlibrary{fit}					% fitting shapes to coordinates
+\usetikzlibrary{backgrounds}	% drawing the background after the foreground
+\pgfplotsset{compat=newest}% <-- moves axis labels near ticklabels (respects tick label widths)
+
+\begin{document}
+  \pgfplotsset{every tick label/.append style={font=\normalsize}}
+  \pgfplotsset{every axis label/.append style={font=\normalsize}}
+\begin{tikzpicture}
+  \centering
+  \begin{axis}[%ybar=1.0pt,
+    ybar stacked,
+    height=13.52cm,
+    %width=16.9cm, % 12->9,  9->6.93,  8-> 6
+    width=16.9cm, % 12->9,  9->6.93,  8-> 6
+    bar width=1.1cm,
+    xmin=0.4,
+    xmax=9,
+    ymin=65.85,
+    ymax=98.32,
+    enlarge y limits={upper,value=0.15},
+    axis lines*=left,
+    legend style={at={(0.5,-0.25)},anchor=north,legend columns=-1,
+    /tikz/every even column/.append style={column sep=0.2cm}},
+    %xticklabels={\textcolor{brinkpink}{S}-\textcolor{aogreen}{L},\textcolor{brinkpink}{M}-\textcolor{aogreen}{S},\textcolor{brinkpink}{L}-\textcolor{aogreen}{M},\textcolor{brinkpink}{S}-\textcolor{aogreen}{S},\textcolor{brinkpink}{M}-\textcolor{aogreen}{M},\textcolor{brinkpink}{L}-\textcolor{aogreen}{L},\textcolor{brinkpink}{S}-\textcolor{aogreen}{S},\textcolor{brinkpink}{M}-\textcolor{aogreen}{M}},
+    xticklabels={spanAmb \\ \textcolor{brinkpink}{1} \\ \textcolor{cyan}{0}, tokAmb \\ \textcolor{brinkpink}{1} \\ \textcolor{cyan}{0}, spanFre \\ \textcolor{brinkpink}{(.035, .18]} \\ \textcolor{cyan}{0}, tokFre \\ \textcolor{brinkpink}{(.008, .038]} \\ \textcolor{cyan}{(.038, 1]}, spanLen \\ \textcolor{brinkpink}{1} \\ \textcolor{cyan}{(3, 9]}, sentLen \\ \textcolor{brinkpink}{(24, 34]} \\ \textcolor{cyan}{(34, 85]}, spanDen \\ \textcolor{brinkpink}{(.0154, .143]} \\ \textcolor{cyan}{(.214, .316]}, oovDen \\ \textcolor{brinkpink}{0} \\ \textcolor{cyan}{(0, .0278]}},
+    xtick=data,
+    xmajorgrids=true,
+    ymajorgrids=true,
+    zmajorgrids=true,
+    grid style=dashed,
+    xticklabel style={
+        inner sep=1pt,
+	align=center,
+        %rotate=90,
+        %anchor=near xticklabel,
+    },
+    ]
+    %\addplot [draw=aogreen!80,fill=aogreen!20] table[x=id,y=y]{
+    \addplot [draw=cyan!80,fill=cyan!20] table[x=id,y=y]{
+    id  y
+    	1	75.02
+	2	75.3
+	3	75.37
+	4	85.58
+	5	70.85
+	6	83.47
+	7	87.52
+	8	80.46
+    };
+    \addplot [draw=brinkpink!80,fill=brinkpink!20] table[x=id,y=y]{
+    id  y
+    	1	20.65
+	2	23.02
+	3	19.35
+	4	6.75
+	5	20.79
+	6	6.35
+	7	1.44
+	8	8.01
+    };
+  \end{axis}
+\end{tikzpicture}
+
+\end{document}
+

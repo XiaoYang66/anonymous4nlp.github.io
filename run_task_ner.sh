@@ -7,16 +7,98 @@ path_data="./data/"
 # path of conf file
 path_aspect_conf="conf.ner-aspects"
 
+# # Part1: Dataset Name
+# datasets[0]="conll03"
+# ## lstm-cnn
+# # Part2: Model Name
+# model1="LSTM"
+# model2="CNN"
+# # Part3: Path of result files
+# resfiles[0]="./preComputed/ner/result/connl03_CcnnWglove_lstmCrf_38868898_9048.txt"
+# resfiles[1]="./preComputed/ner/result/connl03_CcnnWglove_cnnCrf_30028930_9014.txt"
+
 # Part1: Dataset Name
 datasets[0]="conll03"
+datasets[1]="wnut16"
+datasets[2]="notemz"
+datasets[3]="notebc"
+datasets[4]="notebn"
+datasets[5]="notewb"
+# ## crf-mlp
+# # Part2: Model Name
+# model1="CRF"
+# model2="MLP"
+# # Part3: Path of result files
+# resfiles[0]="./preComputed/ner/result/connl03_CcnnWglove_lstmCrf_38868898_9048.txt"
+# resfiles[1]="./preComputed/ner/result/connl03_CcnnWglove_lstmMlp_72951692_8805.txt"
+# resfiles[2]="./preComputed/ner/result/wnut16_CcnnWglove_lstmCrf_49165495_4061.txt"
+# resfiles[3]="./preComputed/ner/result/wnut16_CcnnWglove_lstmMlp_88262654_3284.txt"
+# resfiles[4]="./preComputed/ner/result/notemz_CcnnWglove_lstmCrf_37176065_8539.txt"
+# resfiles[5]="./preComputed/ner/result/notemz_CcnnWglove_lstmMlp_7352_8109.txt"
+# resfiles[6]="./preComputed/ner/result/notebc_CcnnWglove_lstmCrf_28031829_7604.txt"
+# resfiles[7]="./preComputed/ner/result/notebc_CcnnWglove_lstmMlp_0516_7000.txt"
+# resfiles[8]="./preComputed/ner/result/notebn_CcnnWglove_lstmCrf_31653759_8678.txt"
+# resfiles[9]="./preComputed/ner/result/notebn_CcnnWglove_lstmMlp_1454_8407.txt"
+# resfiles[10]="./preComputed/ner/result/notewb_CcnnWglove_lstmCrf_0157649_6017.txt"
+# resfiles[11]="./preComputed/ner/result/notewb_CcnnWglove_lstmMlp_1574_5661.txt"
+
+
+
+# ## lstm-cnn
+# # Part2: Model Name
+# model1="LSTM"
+# model2="CNN"
+# # Part3: Path of result files
+# resfiles[0]="./preComputed/ner/result/connl03_CcnnWglove_lstmCrf_38868898_9048.txt"
+# resfiles[1]="./preComputed/ner/result/connl03_CcnnWglove_cnnCrf_30028930_9014.txt"
+# resfiles[2]="./preComputed/ner/result/wnut16_CcnnWglove_lstmCrf_49165495_4061.txt"
+# resfiles[3]="./preComputed/ner/result/wnut16_CcnnWglove_cnnCrf_96097985_3621.txt"
+# resfiles[4]="./preComputed/ner/result/notemz_CcnnWglove_lstmCrf_37176065_8539.txt"
+# resfiles[5]="./preComputed/ner/result/notemz_CcnnWglove_cnnCrf_30232921_8810.txt"
+# resfiles[6]="./preComputed/ner/result/notebc_CcnnWglove_lstmCrf_28031829_7604.txt"
+# resfiles[7]="./preComputed/ner/result/notebc_CcnnWglove_cnnCrf_39543598_7674.txt"
+# resfiles[8]="./preComputed/ner/result/notebn_CcnnWglove_lstmCrf_31653759_8678.txt"
+# resfiles[9]="./preComputed/ner/result/notebn_CcnnWglove_cnnCrf_75792533_8642.txt"
+# resfiles[10]="./preComputed/ner/result/notewb_CcnnWglove_lstmCrf_0157649_6017.txt"
+# resfiles[11]="./preComputed/ner/result/notewb_CcnnWglove_cnnCrf_06623441_4910.txt"
+
+
+# ## bert-elmo
+# # Part2: Model Name
+# model1="BERT"
+# model2="ELMo"
+# # Part3: Path of result files
+# resfiles[0]="./preComputed/ner/result/connl03_CbertWnon_snonMlp_9111.txt"
+# resfiles[1]="./preComputed/ner/result/connl03_CelmoWnone_lstmCrf_9164.txt"
+# resfiles[2]="./preComputed/ner/result/wnut16_CbertWnon_snonMlp_4250.txt"
+# resfiles[3]="./preComputed/ner/result/wnut16_CelmoWnone_lstmCrf_10716009_4456.txt"
+# resfiles[4]="./preComputed/ner/result/notemz_CbertWnon_snonMlp_8690.txt"
+# resfiles[5]="./preComputed/ner/result/notemz_CelmoWnone_lstmCrf_49178345_8632.txt"
+# resfiles[6]="./preComputed/ner/result/notebc_CbertWnon_snonMlp_8103.txt"
+# resfiles[7]="./preComputed/ner/result/notebc_CelmoWnone_lstmCrf_07666666_7710.txt"
+# resfiles[8]="./preComputed/ner/result/notebn_CbertWnon_snonMlp_8964.txt"
+# resfiles[9]="./preComputed/ner/result/notebn_CelmoWnone_lstmCrf_90655016_8975.txt"
+# resfiles[10]="./preComputed/ner/result/notewb_CbertWnon_snonMlp_6635.txt"
+# resfiles[11]="./preComputed/ner/result/notewb_CelmoWnone_lstmCrf_72467070_6054.txt"
+
+
+## bert-elmo
 # Part2: Model Name
-model1="LSTM"
-model2="CNN"
+model1="Flair"
+model2="ELMo"
 # Part3: Path of result files
-resfiles[0]="./preComputed/ner/result/connl03_CcnnWglove_lstmCrf_38868898_9048.txt"
-resfiles[1]="./preComputed/ner/result/connl03_CcnnWglove_cnnCrf_30028930_9014.txt"
-
-
+resfiles[0]="./preComputed/ner/result/connl03_CflairWglove_lstmCrf_9303.txt"
+resfiles[1]="./preComputed/ner/result/connl03_CelmoWglove_lstmCrf_9222.txt"
+resfiles[2]="./preComputed/ner/result/wnut16_CflairWglove_lstmCrf_27707443_4596.txt"
+resfiles[3]="./preComputed/ner/result/wnut16_CelmoWglove_lstmCrf_29275447_4533.txt"
+resfiles[4]="./preComputed/ner/result/notemz_CflairWglove_lstmCrf_04021194_8556.txt"
+resfiles[5]="./preComputed/ner/result/notemz_CelmoWglove_lstmCrf_03074714_8570.txt"
+resfiles[6]="./preComputed/ner/result/notebc_CflairWglove_lstmCrf_28950149_7723.txt"
+resfiles[7]="./preComputed/ner/result/notebc_CelmoWglove_lstmCrf_37135514_7871.txt"
+resfiles[8]="./preComputed/ner/result/notebn_CflairWglove_lstmCrf_66038071_8792.txt"
+resfiles[9]="./preComputed/ner/result/notebn_CelmoWglove_lstmCrf_44235323_8935.txt"
+resfiles[10]="./preComputed/ner/result/notewb_CflairWglove_lstmCrf_61167535_6338.txt"
+resfiles[11]="./preComputed/ner/result/notewb_CelmoWglove_lstmCrf_19308314_6326.txt"
 
 
 

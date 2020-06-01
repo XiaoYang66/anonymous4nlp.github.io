@@ -1,0 +1,688 @@
+<html>
+  <head>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+<script>
+$(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip();
+});
+</script>
+
+
+
+<script type="text/javascript">
+function myFunction(elem) {
+  var x = document.getElementById(elem);
+  if (x.style.display === "none") {
+    x.style.display = "block";
+    //$("#"+elem+ " img").css({"width":"400px","height":"200px"})
+  } else {
+    x.style.display = "none";
+    //$("#"+elem+ " img").css({"width":"150px","height":"100px"})
+  }
+}
+</script>
+
+
+
+
+<script type="text/javascript">
+  $(function(){
+    $('img').mouseenter(function(){
+      var wValue=3 * $(this).width();
+      var hValue=3 * $(this).height();    
+      $(this).stop().animate({width: wValue,
+              height: hValue,
+              left:("-"+(0.5 * $(this).width())/2),
+              top:("-"+(0.5 * $(this).height())/2)}, 1000);
+    }).mouseleave(function(){
+      $(this).stop().animate({width:150,
+                     height: 130,
+                     left:"0px",
+                     top:"0px"}, 1000 );
+    });
+  });
+</script>
+
+
+    <h3>1. Holistic Result</h3>
+
+
+    <div class='table_self_diagnosis'>
+ <div class='tr_title'><div class='td'><a href="#" data-toggle="tooltip" title="different types of models">Model</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="dataset: CoNLL 2003">conll03</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="">wnut16</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="dataset: ontonotes-mz">notemz</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="dataset: ontonotes-bc">notebc</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="">notebn</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="dataset: ontonotes-wb">notewb</a></div>
+</div>
+ <div class='tr_plain'><div class='td'><a href="#" data-toggle="tooltip" title="">CRF</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="">90.48</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="">40.61</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="">85.39</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="">76.04</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="">86.78</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="">60.17</a></div>
+</div>
+ <div class='tr_plain'><div class='td'><a href="#" data-toggle="tooltip" title="">MLP</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="">88.05</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="">32.84</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="">81.09</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="">70.0</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="">84.07</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="">56.61</a></div>
+</div>
+</div>
+
+    <HR style="border:1 dashed #987cb9" width="100%" color="gray" SIZE=2>  
+    <!------------------------------------------------------------------------- -->
+
+    <h3>2. Break-down Performance</h3>
+
+    <div class='table_breakdown'>
+<li><b>Model Setting:</b> <i>CRF</i></li>
+<h5> Dataset: <i> conll03</i>
+<div class='table_breakdown'>
+ <div class='tr_title'><div class='td'><a href="#" data-toggle="tooltip" title="span-level label ambiguity">spanAmb</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="token-level label ambiguity">tokAmb</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="span-level frequency in training set">spanFre</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="token-level frequency in training set">tokFre</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="the length of text span">spanLen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="the length of sentence">sentLen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="span density in a given sentence">spanDen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="oov density in a given sentence">oovDen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="span-level label">tag</a></div>
+</div>
+ <div class='tr'><div class='td'><img src=./ner-fig/CRF-MLP/conll03-CRF-breakdown-spanAmb.png alt="image" /><button onclick="myFunction(23100241)">Click Me</button>
+<div id="23100241" style="display: none;">0:(0,) 1:(0,0.5) 2:(0.5,0.999) 3:(1,)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/conll03-CRF-breakdown-tokAmb.png alt="image" /><button onclick="myFunction(1619035)">Click Me</button>
+<div id="1619035" style="display: none;">0:(0,) 1:(0,0.5) 2:(0.5,0.999) 3:(1,)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/conll03-CRF-breakdown-spanFre.png alt="image" /><button onclick="myFunction(13267858)">Click Me</button>
+<div id="13267858" style="display: none;">0:(0,) 1:(0,0.032) 2:(0.032,0.173) 3:(0.173,1)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/conll03-CRF-breakdown-tokFre.png alt="image" /><button onclick="myFunction(70750255)">Click Me</button>
+<div id="70750255" style="display: none;">0:(0,) 1:(0,0.003) 2:(0.003,0.015) 3:(0.015,1)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/conll03-CRF-breakdown-spanLen.png alt="image" /><button onclick="myFunction(22817145)">Click Me</button>
+<div id="22817145" style="display: none;">0:(1,) 1:(2,) 2:(3,) 3:(3,6)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/conll03-CRF-breakdown-sentLen.png alt="image" /><button onclick="myFunction(98342649)">Click Me</button>
+<div id="98342649" style="display: none;">0:(1,7) 1:(7,16) 2:(16,31) 3:(31,124)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/conll03-CRF-breakdown-spanDen.png alt="image" /><button onclick="myFunction(5851454)">Click Me</button>
+<div id="5851454" style="display: none;">0:(0.0222,0.15) 1:(0.15,0.258) 2:(0.258,0.429) 3:(0.429,1)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/conll03-CRF-breakdown-oovDen.png alt="image" /><button onclick="myFunction(45765496)">Click Me</button>
+<div id="45765496" style="display: none;">0:(0,) 1:(0,0.0667) 2:(0.0667,0.203) 3:(0.203,1)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/conll03-CRF-breakdown-tag.png alt="image" /><button onclick="myFunction(72327362)">Click Me</button>
+<div id="72327362" style="display: none;">0:('loc',) 1:('misc',) 2:('org',) 3:('per',)</div>
+</div>
+</div>
+</div></h5>
+<h5> Dataset: <i> wnut16</i>
+<div class='table_breakdown'>
+ <div class='tr_title'><div class='td'><a href="#" data-toggle="tooltip" title="span-level label ambiguity">spanAmb</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="token-level label ambiguity">tokAmb</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="span-level frequency in training set">spanFre</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="token-level frequency in training set">tokFre</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="the length of text span">spanLen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="the length of sentence">sentLen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="span density in a given sentence">spanDen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="oov density in a given sentence">oovDen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="span-level label">tag</a></div>
+</div>
+ <div class='tr'><div class='td'><img src=./ner-fig/CRF-MLP/wnut16-CRF-breakdown-spanAmb.png alt="image" /><button onclick="myFunction(74440286)">Click Me</button>
+<div id="74440286" style="display: none;">0:(0,) 1:(0,0.5) 2:(0.5,0.999) 3:(1,)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/wnut16-CRF-breakdown-tokAmb.png alt="image" /><button onclick="myFunction(83983564)">Click Me</button>
+<div id="83983564" style="display: none;">0:(0,) 1:(0,0.5) 2:(0.5,0.999) 3:(1,)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/wnut16-CRF-breakdown-spanFre.png alt="image" /><button onclick="myFunction(61920481)">Click Me</button>
+<div id="61920481" style="display: none;">0:(0,) 1:(0.015,) 2:(0.015,0.077) 3:(0.077,1)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/wnut16-CRF-breakdown-tokFre.png alt="image" /><button onclick="myFunction(78360348)">Click Me</button>
+<div id="78360348" style="display: none;">0:(0,) 1:(0,0.002) 2:(0.002,0.027) 3:(0.027,1)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/wnut16-CRF-breakdown-spanLen.png alt="image" /><button onclick="myFunction(30992424)">Click Me</button>
+<div id="30992424" style="display: none;">0:(1,) 1:(2,) 2:(3,) 3:(3,14)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/wnut16-CRF-breakdown-sentLen.png alt="image" /><button onclick="myFunction(51259209)">Click Me</button>
+<div id="51259209" style="display: none;">0:(2,15) 1:(15,20) 2:(20,24) 3:(24,35)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/wnut16-CRF-breakdown-spanDen.png alt="image" /><button onclick="myFunction(96288632)">Click Me</button>
+<div id="96288632" style="display: none;">0:(0.0294,0.105) 1:(0.105,0.188) 2:(0.188,0.294) 3:(0.294,0.952)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/wnut16-CRF-breakdown-oovDen.png alt="image" /><button onclick="myFunction(6740519)">Click Me</button>
+<div id="6740519" style="display: none;">0:(0,) 1:(0,0.0909) 2:(0.0909,0.167) 3:(0.167,1)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/wnut16-CRF-breakdown-tag.png alt="image" /><button onclick="myFunction(81148451)">Click Me</button>
+<div id="81148451" style="display: none;">0:('company',) 1:('facility',) 2:('loc',) 3:('other',) 4:('person',) 5:('product',)</div>
+</div>
+</div>
+</div></h5>
+<h5> Dataset: <i> notemz</i>
+<div class='table_breakdown'>
+ <div class='tr_title'><div class='td'><a href="#" data-toggle="tooltip" title="span-level label ambiguity">spanAmb</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="token-level label ambiguity">tokAmb</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="span-level frequency in training set">spanFre</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="token-level frequency in training set">tokFre</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="the length of text span">spanLen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="the length of sentence">sentLen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="span density in a given sentence">spanDen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="oov density in a given sentence">oovDen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="span-level label">tag</a></div>
+</div>
+ <div class='tr'><div class='td'><img src=./ner-fig/CRF-MLP/notemz-CRF-breakdown-spanAmb.png alt="image" /><button onclick="myFunction(36637544)">Click Me</button>
+<div id="36637544" style="display: none;">0:(0,) 1:(0,0.5) 2:(0.5,0.999) 3:(1,)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/notemz-CRF-breakdown-tokAmb.png alt="image" /><button onclick="myFunction(15556254)">Click Me</button>
+<div id="15556254" style="display: none;">0:(0,) 1:(0,0.5) 2:(0.5,0.999) 3:(1,)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/notemz-CRF-breakdown-spanFre.png alt="image" /><button onclick="myFunction(24933979)">Click Me</button>
+<div id="24933979" style="display: none;">0:(0,) 1:(0,0.02) 2:(0.02,0.317) 3:(0.317,1)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/notemz-CRF-breakdown-tokFre.png alt="image" /><button onclick="myFunction(36485595)">Click Me</button>
+<div id="36485595" style="display: none;">0:(0,) 1:(0,0.007) 2:(0.007,0.051) 3:(0.051,1)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/notemz-CRF-breakdown-spanLen.png alt="image" /><button onclick="myFunction(31524299)">Click Me</button>
+<div id="31524299" style="display: none;">0:(1,) 1:(2,) 2:(3,) 3:(3,8)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/notemz-CRF-breakdown-sentLen.png alt="image" /><button onclick="myFunction(29736308)">Click Me</button>
+<div id="29736308" style="display: none;">0:(2,20) 1:(20,29) 2:(29,41) 3:(41,76)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/notemz-CRF-breakdown-spanDen.png alt="image" /><button onclick="myFunction(32381735)">Click Me</button>
+<div id="32381735" style="display: none;">0:(0.0192,0.122) 1:(0.122,0.211) 2:(0.211,0.321) 3:(0.321,1)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/notemz-CRF-breakdown-oovDen.png alt="image" /><button onclick="myFunction(46509649)">Click Me</button>
+<div id="46509649" style="display: none;">0:(0,) 1:(0,0.0345) 2:(0.0345,0.0645) 3:(0.0645,0.333)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/notemz-CRF-breakdown-tag.png alt="image" /><button onclick="myFunction(28727775)">Click Me</button>
+<div id="28727775" style="display: none;">0:('cardinal',) 1:('date',) 2:('gpe',) 3:('norp',) 4:('org',) 5:('person',)</div>
+</div>
+</div>
+</div></h5>
+<h5> Dataset: <i> notebc</i>
+<div class='table_breakdown'>
+ <div class='tr_title'><div class='td'><a href="#" data-toggle="tooltip" title="span-level label ambiguity">spanAmb</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="token-level label ambiguity">tokAmb</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="span-level frequency in training set">spanFre</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="token-level frequency in training set">tokFre</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="the length of text span">spanLen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="the length of sentence">sentLen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="span density in a given sentence">spanDen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="oov density in a given sentence">oovDen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="span-level label">tag</a></div>
+</div>
+ <div class='tr'><div class='td'><img src=./ner-fig/CRF-MLP/notebc-CRF-breakdown-spanAmb.png alt="image" /><button onclick="myFunction(53651284)">Click Me</button>
+<div id="53651284" style="display: none;">0:(0,) 1:(0,0.5) 2:(0.5,0.999) 3:(1,)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/notebc-CRF-breakdown-tokAmb.png alt="image" /><button onclick="myFunction(46209391)">Click Me</button>
+<div id="46209391" style="display: none;">0:(0,) 1:(0,0.5) 2:(0.5,0.999) 3:(1,)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/notebc-CRF-breakdown-spanFre.png alt="image" /><button onclick="myFunction(47680466)">Click Me</button>
+<div id="47680466" style="display: none;">0:(0,) 1:(0,0.038) 2:(0.038,0.167) 3:(0.167,1)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/notebc-CRF-breakdown-tokFre.png alt="image" /><button onclick="myFunction(8871605)">Click Me</button>
+<div id="8871605" style="display: none;">0:(0,) 1:(0,0.008) 2:(0.008,0.031) 3:(0.031,1)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/notebc-CRF-breakdown-spanLen.png alt="image" /><button onclick="myFunction(96833039)">Click Me</button>
+<div id="96833039" style="display: none;">0:(1,) 1:(2,) 2:(3,) 3:(3,11)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/notebc-CRF-breakdown-sentLen.png alt="image" /><button onclick="myFunction(46802178)">Click Me</button>
+<div id="46802178" style="display: none;">0:(2,15) 1:(15,23) 2:(23,39) 3:(39,88)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/notebc-CRF-breakdown-spanDen.png alt="image" /><button onclick="myFunction(32824272)">Click Me</button>
+<div id="32824272" style="display: none;">0:(0.0114,0.125) 1:(0.125,0.211) 2:(0.211,0.333) 3:(0.333,1)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/notebc-CRF-breakdown-oovDen.png alt="image" /><button onclick="myFunction(48776564)">Click Me</button>
+<div id="48776564" style="display: none;">0:(0,) 1:(0,0.037) 2:(0.037,0.0625) 3:(0.0625,0.5)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/notebc-CRF-breakdown-tag.png alt="image" /><button onclick="myFunction(39407602)">Click Me</button>
+<div id="39407602" style="display: none;">0:('cardinal',) 1:('date',) 2:('gpe',) 3:('norp',) 4:('org',) 5:('person',)</div>
+</div>
+</div>
+</div></h5>
+<h5> Dataset: <i> notebn</i>
+<div class='table_breakdown'>
+ <div class='tr_title'><div class='td'><a href="#" data-toggle="tooltip" title="span-level label ambiguity">spanAmb</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="token-level label ambiguity">tokAmb</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="span-level frequency in training set">spanFre</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="token-level frequency in training set">tokFre</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="the length of text span">spanLen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="the length of sentence">sentLen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="span density in a given sentence">spanDen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="oov density in a given sentence">oovDen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="span-level label">tag</a></div>
+</div>
+ <div class='tr'><div class='td'><img src=./ner-fig/CRF-MLP/notebn-CRF-breakdown-spanAmb.png alt="image" /><button onclick="myFunction(50593721)">Click Me</button>
+<div id="50593721" style="display: none;">0:(0,) 1:(0,0.5) 2:(0.5,0.999) 3:(1,)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/notebn-CRF-breakdown-tokAmb.png alt="image" /><button onclick="myFunction(82118590)">Click Me</button>
+<div id="82118590" style="display: none;">0:(0,) 1:(0,0.5) 2:(0.5,0.999) 3:(1,)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/notebn-CRF-breakdown-spanFre.png alt="image" /><button onclick="myFunction(60576507)">Click Me</button>
+<div id="60576507" style="display: none;">0:(0,) 1:(0,0.035) 2:(0.035,0.18) 3:(0.18,1)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/notebn-CRF-breakdown-tokFre.png alt="image" /><button onclick="myFunction(48136022)">Click Me</button>
+<div id="48136022" style="display: none;">0:(0,) 1:(0,0.008) 2:(0.008,0.038) 3:(0.038,1)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/notebn-CRF-breakdown-spanLen.png alt="image" /><button onclick="myFunction(10759373)">Click Me</button>
+<div id="10759373" style="display: none;">0:(1,) 1:(2,) 2:(3,) 3:(3,9)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/notebn-CRF-breakdown-sentLen.png alt="image" /><button onclick="myFunction(54933283)">Click Me</button>
+<div id="54933283" style="display: none;">0:(2,16) 1:(16,24) 2:(24,34) 3:(34,85)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/notebn-CRF-breakdown-spanDen.png alt="image" /><button onclick="myFunction(90467943)">Click Me</button>
+<div id="90467943" style="display: none;">0:(0.0154,0.143) 1:(0.143,0.214) 2:(0.214,0.316) 3:(0.316,0.737)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/notebn-CRF-breakdown-oovDen.png alt="image" /><button onclick="myFunction(52737958)">Click Me</button>
+<div id="52737958" style="display: none;">0:(0,) 1:(0,0.0278) 2:(0.0278,0.0526) 3:(0.0526,0.222)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/notebn-CRF-breakdown-tag.png alt="image" /><button onclick="myFunction(44778613)">Click Me</button>
+<div id="44778613" style="display: none;">0:('cardinal',) 1:('date',) 2:('gpe',) 3:('norp',) 4:('org',) 5:('person',)</div>
+</div>
+</div>
+</div></h5>
+<h5> Dataset: <i> notewb</i>
+<div class='table_breakdown'>
+ <div class='tr_title'><div class='td'><a href="#" data-toggle="tooltip" title="span-level label ambiguity">spanAmb</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="token-level label ambiguity">tokAmb</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="span-level frequency in training set">spanFre</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="token-level frequency in training set">tokFre</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="the length of text span">spanLen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="the length of sentence">sentLen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="span density in a given sentence">spanDen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="oov density in a given sentence">oovDen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="span-level label">tag</a></div>
+</div>
+ <div class='tr'><div class='td'><img src=./ner-fig/CRF-MLP/notewb-CRF-breakdown-spanAmb.png alt="image" /><button onclick="myFunction(22721192)">Click Me</button>
+<div id="22721192" style="display: none;">0:(0,) 1:(0,0.5) 2:(0.5,0.999) 3:(1,)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/notewb-CRF-breakdown-tokAmb.png alt="image" /><button onclick="myFunction(95773553)">Click Me</button>
+<div id="95773553" style="display: none;">0:(0,) 1:(0,0.5) 2:(0.5,0.999) 3:(1,)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/notewb-CRF-breakdown-spanFre.png alt="image" /><button onclick="myFunction(39675225)">Click Me</button>
+<div id="39675225" style="display: none;">0:(0,) 1:(0,0.019) 2:(0.019,0.166) 3:(0.166,1)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/notewb-CRF-breakdown-tokFre.png alt="image" /><button onclick="myFunction(33228714)">Click Me</button>
+<div id="33228714" style="display: none;">0:(0,) 1:(0,0.004) 2:(0.004,0.029) 3:(0.029,1)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/notewb-CRF-breakdown-spanLen.png alt="image" /><button onclick="myFunction(66847960)">Click Me</button>
+<div id="66847960" style="display: none;">0:(1,) 1:(2,) 2:(3,) 3:(3,7)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/notewb-CRF-breakdown-sentLen.png alt="image" /><button onclick="myFunction(19369688)">Click Me</button>
+<div id="19369688" style="display: none;">0:(2,17) 1:(17,27) 2:(27,41) 3:(41,104)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/notewb-CRF-breakdown-spanDen.png alt="image" /><button onclick="myFunction(52774940)">Click Me</button>
+<div id="52774940" style="display: none;">0:(0.0137,0.0909) 1:(0.0909,0.171) 2:(0.171,0.267) 3:(0.267,1)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/notewb-CRF-breakdown-oovDen.png alt="image" /><button onclick="myFunction(70677957)">Click Me</button>
+<div id="70677957" style="display: none;">0:(0,) 1:(0,0.0417) 2:(0.0417,0.0625) 3:(0.0625,0.5)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/notewb-CRF-breakdown-tag.png alt="image" /><button onclick="myFunction(19609052)">Click Me</button>
+<div id="19609052" style="display: none;">0:('cardinal',) 1:('date',) 2:('gpe',) 3:('norp',) 4:('org',) 5:('person',)</div>
+</div>
+</div>
+</div></h5>
+<li><b>Model Setting:</b> <i>MLP</i></li>
+<h5> Dataset: <i> conll03</i>
+<div class='table_breakdown'>
+ <div class='tr_title'><div class='td'><a href="#" data-toggle="tooltip" title="span-level label ambiguity">spanAmb</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="token-level label ambiguity">tokAmb</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="span-level frequency in training set">spanFre</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="token-level frequency in training set">tokFre</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="the length of text span">spanLen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="the length of sentence">sentLen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="span density in a given sentence">spanDen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="oov density in a given sentence">oovDen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="span-level label">tag</a></div>
+</div>
+ <div class='tr'><div class='td'><img src=./ner-fig/CRF-MLP/conll03-MLP-breakdown-spanAmb.png alt="image" /><button onclick="myFunction(75266266)">Click Me</button>
+<div id="75266266" style="display: none;">0:(0,) 1:(0,0.5) 2:(0.5,0.999) 3:(1,)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/conll03-MLP-breakdown-tokAmb.png alt="image" /><button onclick="myFunction(89582164)">Click Me</button>
+<div id="89582164" style="display: none;">0:(0,) 1:(0,0.5) 2:(0.5,0.999) 3:(1,)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/conll03-MLP-breakdown-spanFre.png alt="image" /><button onclick="myFunction(4997216)">Click Me</button>
+<div id="4997216" style="display: none;">0:(0,) 1:(0,0.032) 2:(0.032,0.173) 3:(0.173,1)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/conll03-MLP-breakdown-tokFre.png alt="image" /><button onclick="myFunction(81840392)">Click Me</button>
+<div id="81840392" style="display: none;">0:(0,) 1:(0,0.003) 2:(0.003,0.015) 3:(0.015,1)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/conll03-MLP-breakdown-spanLen.png alt="image" /><button onclick="myFunction(76768200)">Click Me</button>
+<div id="76768200" style="display: none;">0:(1,) 1:(2,) 2:(3,) 3:(3,6)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/conll03-MLP-breakdown-sentLen.png alt="image" /><button onclick="myFunction(48514669)">Click Me</button>
+<div id="48514669" style="display: none;">0:(1,7) 1:(7,16) 2:(16,31) 3:(31,124)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/conll03-MLP-breakdown-spanDen.png alt="image" /><button onclick="myFunction(77469995)">Click Me</button>
+<div id="77469995" style="display: none;">0:(0.0222,0.15) 1:(0.15,0.258) 2:(0.258,0.429) 3:(0.429,1)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/conll03-MLP-breakdown-oovDen.png alt="image" /><button onclick="myFunction(92619559)">Click Me</button>
+<div id="92619559" style="display: none;">0:(0,) 1:(0,0.0667) 2:(0.0667,0.203) 3:(0.203,1)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/conll03-MLP-breakdown-tag.png alt="image" /><button onclick="myFunction(35675445)">Click Me</button>
+<div id="35675445" style="display: none;">0:('loc',) 1:('misc',) 2:('org',) 3:('per',)</div>
+</div>
+</div>
+</div>
+<h5> Dataset: <i> wnut16</i>
+<div class='table_breakdown'>
+ <div class='tr_title'><div class='td'><a href="#" data-toggle="tooltip" title="span-level label ambiguity">spanAmb</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="token-level label ambiguity">tokAmb</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="span-level frequency in training set">spanFre</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="token-level frequency in training set">tokFre</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="the length of text span">spanLen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="the length of sentence">sentLen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="span density in a given sentence">spanDen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="oov density in a given sentence">oovDen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="span-level label">tag</a></div>
+</div>
+ <div class='tr'><div class='td'><img src=./ner-fig/CRF-MLP/wnut16-MLP-breakdown-spanAmb.png alt="image" /><button onclick="myFunction(31315317)">Click Me</button>
+<div id="31315317" style="display: none;">0:(0,) 1:(0,0.5) 2:(0.5,0.999) 3:(1,)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/wnut16-MLP-breakdown-tokAmb.png alt="image" /><button onclick="myFunction(82629459)">Click Me</button>
+<div id="82629459" style="display: none;">0:(0,) 1:(0,0.5) 2:(0.5,0.999) 3:(1,)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/wnut16-MLP-breakdown-spanFre.png alt="image" /><button onclick="myFunction(50456300)">Click Me</button>
+<div id="50456300" style="display: none;">0:(0,) 1:(0.015,) 2:(0.015,0.077) 3:(0.077,1)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/wnut16-MLP-breakdown-tokFre.png alt="image" /><button onclick="myFunction(90321019)">Click Me</button>
+<div id="90321019" style="display: none;">0:(0,) 1:(0,0.002) 2:(0.002,0.027) 3:(0.027,1)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/wnut16-MLP-breakdown-spanLen.png alt="image" /><button onclick="myFunction(2948193)">Click Me</button>
+<div id="2948193" style="display: none;">0:(1,) 1:(2,) 2:(3,) 3:(3,14)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/wnut16-MLP-breakdown-sentLen.png alt="image" /><button onclick="myFunction(81942640)">Click Me</button>
+<div id="81942640" style="display: none;">0:(2,15) 1:(15,20) 2:(20,24) 3:(24,35)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/wnut16-MLP-breakdown-spanDen.png alt="image" /><button onclick="myFunction(47471890)">Click Me</button>
+<div id="47471890" style="display: none;">0:(0.0294,0.105) 1:(0.105,0.188) 2:(0.188,0.294) 3:(0.294,0.952)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/wnut16-MLP-breakdown-oovDen.png alt="image" /><button onclick="myFunction(90029006)">Click Me</button>
+<div id="90029006" style="display: none;">0:(0,) 1:(0,0.0909) 2:(0.0909,0.167) 3:(0.167,1)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/wnut16-MLP-breakdown-tag.png alt="image" /><button onclick="myFunction(14349841)">Click Me</button>
+<div id="14349841" style="display: none;">0:('company',) 1:('facility',) 2:('loc',) 3:('other',) 4:('person',) 5:('product',)</div>
+</div>
+</div>
+</div>
+<h5> Dataset: <i> notemz</i>
+<div class='table_breakdown'>
+ <div class='tr_title'><div class='td'><a href="#" data-toggle="tooltip" title="span-level label ambiguity">spanAmb</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="token-level label ambiguity">tokAmb</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="span-level frequency in training set">spanFre</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="token-level frequency in training set">tokFre</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="the length of text span">spanLen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="the length of sentence">sentLen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="span density in a given sentence">spanDen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="oov density in a given sentence">oovDen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="span-level label">tag</a></div>
+</div>
+ <div class='tr'><div class='td'><img src=./ner-fig/CRF-MLP/notemz-MLP-breakdown-spanAmb.png alt="image" /><button onclick="myFunction(61836728)">Click Me</button>
+<div id="61836728" style="display: none;">0:(0,) 1:(0,0.5) 2:(0.5,0.999) 3:(1,)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/notemz-MLP-breakdown-tokAmb.png alt="image" /><button onclick="myFunction(79347918)">Click Me</button>
+<div id="79347918" style="display: none;">0:(0,) 1:(0,0.5) 2:(0.5,0.999) 3:(1,)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/notemz-MLP-breakdown-spanFre.png alt="image" /><button onclick="myFunction(83762848)">Click Me</button>
+<div id="83762848" style="display: none;">0:(0,) 1:(0,0.02) 2:(0.02,0.317) 3:(0.317,1)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/notemz-MLP-breakdown-tokFre.png alt="image" /><button onclick="myFunction(40535878)">Click Me</button>
+<div id="40535878" style="display: none;">0:(0,) 1:(0,0.007) 2:(0.007,0.051) 3:(0.051,1)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/notemz-MLP-breakdown-spanLen.png alt="image" /><button onclick="myFunction(6760441)">Click Me</button>
+<div id="6760441" style="display: none;">0:(1,) 1:(2,) 2:(3,) 3:(3,8)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/notemz-MLP-breakdown-sentLen.png alt="image" /><button onclick="myFunction(58266731)">Click Me</button>
+<div id="58266731" style="display: none;">0:(2,20) 1:(20,29) 2:(29,41) 3:(41,76)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/notemz-MLP-breakdown-spanDen.png alt="image" /><button onclick="myFunction(68245516)">Click Me</button>
+<div id="68245516" style="display: none;">0:(0.0192,0.122) 1:(0.122,0.211) 2:(0.211,0.321) 3:(0.321,1)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/notemz-MLP-breakdown-oovDen.png alt="image" /><button onclick="myFunction(10483152)">Click Me</button>
+<div id="10483152" style="display: none;">0:(0,) 1:(0,0.0345) 2:(0.0345,0.0645) 3:(0.0645,0.333)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/notemz-MLP-breakdown-tag.png alt="image" /><button onclick="myFunction(92447938)">Click Me</button>
+<div id="92447938" style="display: none;">0:('cardinal',) 1:('date',) 2:('gpe',) 3:('norp',) 4:('org',) 5:('person',)</div>
+</div>
+</div>
+</div>
+<h5> Dataset: <i> notebc</i>
+<div class='table_breakdown'>
+ <div class='tr_title'><div class='td'><a href="#" data-toggle="tooltip" title="span-level label ambiguity">spanAmb</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="token-level label ambiguity">tokAmb</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="span-level frequency in training set">spanFre</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="token-level frequency in training set">tokFre</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="the length of text span">spanLen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="the length of sentence">sentLen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="span density in a given sentence">spanDen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="oov density in a given sentence">oovDen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="span-level label">tag</a></div>
+</div>
+ <div class='tr'><div class='td'><img src=./ner-fig/CRF-MLP/notebc-MLP-breakdown-spanAmb.png alt="image" /><button onclick="myFunction(1948207)">Click Me</button>
+<div id="1948207" style="display: none;">0:(0,) 1:(0,0.5) 2:(0.5,0.999) 3:(1,)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/notebc-MLP-breakdown-tokAmb.png alt="image" /><button onclick="myFunction(8734079)">Click Me</button>
+<div id="8734079" style="display: none;">0:(0,) 1:(0,0.5) 2:(0.5,0.999) 3:(1,)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/notebc-MLP-breakdown-spanFre.png alt="image" /><button onclick="myFunction(65476195)">Click Me</button>
+<div id="65476195" style="display: none;">0:(0,) 1:(0,0.038) 2:(0.038,0.167) 3:(0.167,1)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/notebc-MLP-breakdown-tokFre.png alt="image" /><button onclick="myFunction(53284681)">Click Me</button>
+<div id="53284681" style="display: none;">0:(0,) 1:(0,0.008) 2:(0.008,0.031) 3:(0.031,1)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/notebc-MLP-breakdown-spanLen.png alt="image" /><button onclick="myFunction(10745164)">Click Me</button>
+<div id="10745164" style="display: none;">0:(1,) 1:(2,) 2:(3,) 3:(3,11)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/notebc-MLP-breakdown-sentLen.png alt="image" /><button onclick="myFunction(46151849)">Click Me</button>
+<div id="46151849" style="display: none;">0:(2,15) 1:(15,23) 2:(23,39) 3:(39,88)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/notebc-MLP-breakdown-spanDen.png alt="image" /><button onclick="myFunction(75510413)">Click Me</button>
+<div id="75510413" style="display: none;">0:(0.0114,0.125) 1:(0.125,0.211) 2:(0.211,0.333) 3:(0.333,1)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/notebc-MLP-breakdown-oovDen.png alt="image" /><button onclick="myFunction(69103278)">Click Me</button>
+<div id="69103278" style="display: none;">0:(0,) 1:(0,0.037) 2:(0.037,0.0625) 3:(0.0625,0.5)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/notebc-MLP-breakdown-tag.png alt="image" /><button onclick="myFunction(10718132)">Click Me</button>
+<div id="10718132" style="display: none;">0:('cardinal',) 1:('date',) 2:('gpe',) 3:('norp',) 4:('org',) 5:('person',)</div>
+</div>
+</div>
+</div>
+<h5> Dataset: <i> notebn</i>
+<div class='table_breakdown'>
+ <div class='tr_title'><div class='td'><a href="#" data-toggle="tooltip" title="span-level label ambiguity">spanAmb</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="token-level label ambiguity">tokAmb</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="span-level frequency in training set">spanFre</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="token-level frequency in training set">tokFre</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="the length of text span">spanLen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="the length of sentence">sentLen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="span density in a given sentence">spanDen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="oov density in a given sentence">oovDen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="span-level label">tag</a></div>
+</div>
+ <div class='tr'><div class='td'><img src=./ner-fig/CRF-MLP/notebn-MLP-breakdown-spanAmb.png alt="image" /><button onclick="myFunction(36051264)">Click Me</button>
+<div id="36051264" style="display: none;">0:(0,) 1:(0,0.5) 2:(0.5,0.999) 3:(1,)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/notebn-MLP-breakdown-tokAmb.png alt="image" /><button onclick="myFunction(94302118)">Click Me</button>
+<div id="94302118" style="display: none;">0:(0,) 1:(0,0.5) 2:(0.5,0.999) 3:(1,)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/notebn-MLP-breakdown-spanFre.png alt="image" /><button onclick="myFunction(8578553)">Click Me</button>
+<div id="8578553" style="display: none;">0:(0,) 1:(0,0.035) 2:(0.035,0.18) 3:(0.18,1)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/notebn-MLP-breakdown-tokFre.png alt="image" /><button onclick="myFunction(82482310)">Click Me</button>
+<div id="82482310" style="display: none;">0:(0,) 1:(0,0.008) 2:(0.008,0.038) 3:(0.038,1)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/notebn-MLP-breakdown-spanLen.png alt="image" /><button onclick="myFunction(47435427)">Click Me</button>
+<div id="47435427" style="display: none;">0:(1,) 1:(2,) 2:(3,) 3:(3,9)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/notebn-MLP-breakdown-sentLen.png alt="image" /><button onclick="myFunction(44779923)">Click Me</button>
+<div id="44779923" style="display: none;">0:(2,16) 1:(16,24) 2:(24,34) 3:(34,85)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/notebn-MLP-breakdown-spanDen.png alt="image" /><button onclick="myFunction(68918195)">Click Me</button>
+<div id="68918195" style="display: none;">0:(0.0154,0.143) 1:(0.143,0.214) 2:(0.214,0.316) 3:(0.316,0.737)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/notebn-MLP-breakdown-oovDen.png alt="image" /><button onclick="myFunction(93134319)">Click Me</button>
+<div id="93134319" style="display: none;">0:(0,) 1:(0,0.0278) 2:(0.0278,0.0526) 3:(0.0526,0.222)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/notebn-MLP-breakdown-tag.png alt="image" /><button onclick="myFunction(8832531)">Click Me</button>
+<div id="8832531" style="display: none;">0:('cardinal',) 1:('date',) 2:('gpe',) 3:('norp',) 4:('org',) 5:('person',)</div>
+</div>
+</div>
+</div>
+<h5> Dataset: <i> notewb</i>
+<div class='table_breakdown'>
+ <div class='tr_title'><div class='td'><a href="#" data-toggle="tooltip" title="span-level label ambiguity">spanAmb</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="token-level label ambiguity">tokAmb</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="span-level frequency in training set">spanFre</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="token-level frequency in training set">tokFre</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="the length of text span">spanLen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="the length of sentence">sentLen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="span density in a given sentence">spanDen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="oov density in a given sentence">oovDen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="span-level label">tag</a></div>
+</div>
+ <div class='tr'><div class='td'><img src=./ner-fig/CRF-MLP/notewb-MLP-breakdown-spanAmb.png alt="image" /><button onclick="myFunction(89988011)">Click Me</button>
+<div id="89988011" style="display: none;">0:(0,) 1:(0,0.5) 2:(0.5,0.999) 3:(1,)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/notewb-MLP-breakdown-tokAmb.png alt="image" /><button onclick="myFunction(91598879)">Click Me</button>
+<div id="91598879" style="display: none;">0:(0,) 1:(0,0.5) 2:(0.5,0.999) 3:(1,)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/notewb-MLP-breakdown-spanFre.png alt="image" /><button onclick="myFunction(44342112)">Click Me</button>
+<div id="44342112" style="display: none;">0:(0,) 1:(0,0.019) 2:(0.019,0.166) 3:(0.166,1)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/notewb-MLP-breakdown-tokFre.png alt="image" /><button onclick="myFunction(90588976)">Click Me</button>
+<div id="90588976" style="display: none;">0:(0,) 1:(0,0.004) 2:(0.004,0.029) 3:(0.029,1)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/notewb-MLP-breakdown-spanLen.png alt="image" /><button onclick="myFunction(56265761)">Click Me</button>
+<div id="56265761" style="display: none;">0:(1,) 1:(2,) 2:(3,) 3:(3,7)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/notewb-MLP-breakdown-sentLen.png alt="image" /><button onclick="myFunction(78337505)">Click Me</button>
+<div id="78337505" style="display: none;">0:(2,17) 1:(17,27) 2:(27,41) 3:(41,104)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/notewb-MLP-breakdown-spanDen.png alt="image" /><button onclick="myFunction(80149948)">Click Me</button>
+<div id="80149948" style="display: none;">0:(0.0137,0.0909) 1:(0.0909,0.171) 2:(0.171,0.267) 3:(0.267,1)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/notewb-MLP-breakdown-oovDen.png alt="image" /><button onclick="myFunction(87088832)">Click Me</button>
+<div id="87088832" style="display: none;">0:(0,) 1:(0,0.0417) 2:(0.0417,0.0625) 3:(0.0625,0.5)</div>
+</div>
+<div class='td'><img src=./ner-fig/CRF-MLP/notewb-MLP-breakdown-tag.png alt="image" /><button onclick="myFunction(72056365)">Click Me</button>
+<div id="72056365" style="display: none;">0:('cardinal',) 1:('date',) 2:('gpe',) 3:('norp',) 4:('org',) 5:('person',)</div>
+</div>
+</div>
+</div>
+
+
+
+
+    <HR style="border:1 dashed #987cb9" width="100%" color="gray" SIZE=2>  
+    <!------------------------------------------------------------------------- -->
+
+    <!------------------------------------------------------------------------- -->
+    <h3>3. Self-diagnosis </h3>
+
+    <li><b>Model Setting:</b> <i>CRF</i></li>
+<div class='table_self_diagnosis'>
+ <div class='tr_title'><div class='td'><a href="#" data-toggle="tooltip" title="dataset: CoNLL 2003">conll03</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="">wnut16</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="dataset: ontonotes-mz">notemz</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="dataset: ontonotes-bc">notebc</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="">notebn</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="dataset: ontonotes-wb">notewb</a></div>
+</div>
+ <div class='tr'><div class='td'><a href="#" data-toggle="tooltip" title=""><img src=./ner-fig/CRF-MLP/conll03-CRF-selfdiag.png alt="image" /></a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title=""><img src=./ner-fig/CRF-MLP/wnut16-CRF-selfdiag.png alt="image" /></a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title=""><img src=./ner-fig/CRF-MLP/notemz-CRF-selfdiag.png alt="image" /></a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title=""><img src=./ner-fig/CRF-MLP/notebc-CRF-selfdiag.png alt="image" /></a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title=""><img src=./ner-fig/CRF-MLP/notebn-CRF-selfdiag.png alt="image" /></a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title=""><img src=./ner-fig/CRF-MLP/notewb-CRF-selfdiag.png alt="image" /></a></div>
+</div>
+</div>
+<br></br><li><b>Model Setting:</b> <i>MLP</i></li>
+<div class='table_self_diagnosis'>
+ <div class='tr_title'><div class='td'><a href="#" data-toggle="tooltip" title="dataset: CoNLL 2003">conll03</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="">wnut16</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="dataset: ontonotes-mz">notemz</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="dataset: ontonotes-bc">notebc</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="">notebn</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="dataset: ontonotes-wb">notewb</a></div>
+</div>
+ <div class='tr'><div class='td'><a href="#" data-toggle="tooltip" title=""><img src=./ner-fig/CRF-MLP/conll03-MLP-selfdiag.png alt="image" /></a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title=""><img src=./ner-fig/CRF-MLP/wnut16-MLP-selfdiag.png alt="image" /></a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title=""><img src=./ner-fig/CRF-MLP/notemz-MLP-selfdiag.png alt="image" /></a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title=""><img src=./ner-fig/CRF-MLP/notebc-MLP-selfdiag.png alt="image" /></a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title=""><img src=./ner-fig/CRF-MLP/notebn-MLP-selfdiag.png alt="image" /></a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title=""><img src=./ner-fig/CRF-MLP/notewb-MLP-selfdiag.png alt="image" /></a></div>
+</div>
+</div>
+
+
+
+    <HR style="border:1 dashed #987cb9" width="100%" color="gray" SIZE=2>  
+    <!------------------------------------------------------------------------- -->
+
+
+    <h3>4. Aided-diagnosis </h3>
+    <li><b>Model Setting:</b> <i>CRF - MLP</i></li>
+    <div class='table_aided_diagnosis'>
+ <div class='tr_title'><div class='td'><a href="#" data-toggle="tooltip" title="dataset: CoNLL 2003">conll03</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="">wnut16</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="dataset: ontonotes-mz">notemz</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="dataset: ontonotes-bc">notebc</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="">notebn</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="dataset: ontonotes-wb">notewb</a></div>
+</div>
+ <div class='tr'><div class='td'><a href="#" data-toggle="tooltip" title=""><img src=./ner-fig/CRF-MLP/conll03-CRF_MLP-aideddiag.png alt="image" /></a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title=""><img src=./ner-fig/CRF-MLP/wnut16-CRF_MLP-aideddiag.png alt="image" /></a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title=""><img src=./ner-fig/CRF-MLP/notemz-CRF_MLP-aideddiag.png alt="image" /></a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title=""><img src=./ner-fig/CRF-MLP/notebc-CRF_MLP-aideddiag.png alt="image" /></a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title=""><img src=./ner-fig/CRF-MLP/notebn-CRF_MLP-aideddiag.png alt="image" /></a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title=""><img src=./ner-fig/CRF-MLP/notewb-CRF_MLP-aideddiag.png alt="image" /></a></div>
+</div>
+</div>
+
+
+    <HR style="border:1 dashed #987cb9" width="100%" color="gray" SIZE=2>  
+    <!------------------------------------------------------------------------- -->
+
+    <h3>5. Heatmap </h3>
+    <li><b>Model Setting:</b> <i>CRF - MLP</i></li>
+    <div class='table_aided_diagnosis'>
+ <div class='tr_title'><div class='td'><a href="#" data-toggle="tooltip" title="dataset: CoNLL 2003">conll03</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="">wnut16</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="dataset: ontonotes-mz">notemz</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="dataset: ontonotes-bc">notebc</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="">notebn</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="dataset: ontonotes-wb">notewb</a></div>
+</div>
+ <div class='tr'><div class='td'><a href="#" data-toggle="tooltip" title=""><img src=./ner-fig/CRF-MLP/conll03-CRF_MLP-heatmap.png alt="image" /></a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title=""><img src=./ner-fig/CRF-MLP/wnut16-CRF_MLP-heatmap.png alt="image" /></a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title=""><img src=./ner-fig/CRF-MLP/notemz-CRF_MLP-heatmap.png alt="image" /></a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title=""><img src=./ner-fig/CRF-MLP/notebc-CRF_MLP-heatmap.png alt="image" /></a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title=""><img src=./ner-fig/CRF-MLP/notebn-CRF_MLP-heatmap.png alt="image" /></a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title=""><img src=./ner-fig/CRF-MLP/notewb-CRF_MLP-heatmap.png alt="image" /></a></div>
+</div>
+</div>
+
+
+
+
+
+  </body>
+</html>
+
+
+
+
+

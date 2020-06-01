@@ -1,0 +1,688 @@
+<html>
+  <head>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+<script>
+$(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip();
+});
+</script>
+
+
+
+<script type="text/javascript">
+function myFunction(elem) {
+  var x = document.getElementById(elem);
+  if (x.style.display === "none") {
+    x.style.display = "block";
+    //$("#"+elem+ " img").css({"width":"400px","height":"200px"})
+  } else {
+    x.style.display = "none";
+    //$("#"+elem+ " img").css({"width":"150px","height":"100px"})
+  }
+}
+</script>
+
+
+
+
+<script type="text/javascript">
+  $(function(){
+    $('img').mouseenter(function(){
+      var wValue=3 * $(this).width();
+      var hValue=3 * $(this).height();    
+      $(this).stop().animate({width: wValue,
+              height: hValue,
+              left:("-"+(0.5 * $(this).width())/2),
+              top:("-"+(0.5 * $(this).height())/2)}, 1000);
+    }).mouseleave(function(){
+      $(this).stop().animate({width:150,
+                     height: 130,
+                     left:"0px",
+                     top:"0px"}, 1000 );
+    });
+  });
+</script>
+
+
+    <h3>1. Holistic Result</h3>
+
+
+    <div class='table_self_diagnosis'>
+ <div class='tr_title'><div class='td'><a href="#" data-toggle="tooltip" title="different types of models">Model</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="dataset: CoNLL 2003">conll03</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="">wnut16</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="dataset: ontonotes-mz">notemz</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="dataset: ontonotes-bc">notebc</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="">notebn</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="dataset: ontonotes-wb">notewb</a></div>
+</div>
+ <div class='tr_plain'><div class='td'><a href="#" data-toggle="tooltip" title="">LSTM</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="">90.48</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="">40.61</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="">85.39</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="">76.04</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="">86.78</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="">60.17</a></div>
+</div>
+ <div class='tr_plain'><div class='td'><a href="#" data-toggle="tooltip" title="">CNN</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="">90.14</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="">36.21</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="">88.1</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="">76.74</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="">86.42</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="">49.1</a></div>
+</div>
+</div>
+
+    <HR style="border:1 dashed #987cb9" width="100%" color="gray" SIZE=2>  
+    <!------------------------------------------------------------------------- -->
+
+    <h3>2. Break-down Performance</h3>
+
+    <div class='table_breakdown'>
+<li><b>Model Setting:</b> <i>LSTM</i></li>
+<h5> Dataset: <i> conll03</i>
+<div class='table_breakdown'>
+ <div class='tr_title'><div class='td'><a href="#" data-toggle="tooltip" title="span-level label ambiguity">spanAmb</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="token-level label ambiguity">tokAmb</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="span-level frequency in training set">spanFre</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="token-level frequency in training set">tokFre</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="the length of text span">spanLen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="the length of sentence">sentLen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="span density in a given sentence">spanDen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="oov density in a given sentence">oovDen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="span-level label">tag</a></div>
+</div>
+ <div class='tr'><div class='td'><img src=./ner-fig/LSTM-CNN/conll03-LSTM-breakdown-spanAmb.png alt="image" /><button onclick="myFunction(44760917)">Click Me</button>
+<div id="44760917" style="display: none;">0:(0,) 1:(0,0.5) 2:(0.5,0.999) 3:(1,)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/conll03-LSTM-breakdown-tokAmb.png alt="image" /><button onclick="myFunction(21559592)">Click Me</button>
+<div id="21559592" style="display: none;">0:(0,) 1:(0,0.5) 2:(0.5,0.999) 3:(1,)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/conll03-LSTM-breakdown-spanFre.png alt="image" /><button onclick="myFunction(63481110)">Click Me</button>
+<div id="63481110" style="display: none;">0:(0,) 1:(0,0.032) 2:(0.032,0.173) 3:(0.173,1)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/conll03-LSTM-breakdown-tokFre.png alt="image" /><button onclick="myFunction(51205649)">Click Me</button>
+<div id="51205649" style="display: none;">0:(0,) 1:(0,0.003) 2:(0.003,0.015) 3:(0.015,1)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/conll03-LSTM-breakdown-spanLen.png alt="image" /><button onclick="myFunction(23371526)">Click Me</button>
+<div id="23371526" style="display: none;">0:(1,) 1:(2,) 2:(3,) 3:(3,6)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/conll03-LSTM-breakdown-sentLen.png alt="image" /><button onclick="myFunction(69661246)">Click Me</button>
+<div id="69661246" style="display: none;">0:(1,7) 1:(7,16) 2:(16,31) 3:(31,124)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/conll03-LSTM-breakdown-spanDen.png alt="image" /><button onclick="myFunction(57106710)">Click Me</button>
+<div id="57106710" style="display: none;">0:(0.0222,0.15) 1:(0.15,0.258) 2:(0.258,0.429) 3:(0.429,1)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/conll03-LSTM-breakdown-oovDen.png alt="image" /><button onclick="myFunction(56667883)">Click Me</button>
+<div id="56667883" style="display: none;">0:(0,) 1:(0,0.0667) 2:(0.0667,0.203) 3:(0.203,1)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/conll03-LSTM-breakdown-tag.png alt="image" /><button onclick="myFunction(83199747)">Click Me</button>
+<div id="83199747" style="display: none;">0:('loc',) 1:('misc',) 2:('org',) 3:('per',)</div>
+</div>
+</div>
+</div></h5>
+<h5> Dataset: <i> wnut16</i>
+<div class='table_breakdown'>
+ <div class='tr_title'><div class='td'><a href="#" data-toggle="tooltip" title="span-level label ambiguity">spanAmb</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="token-level label ambiguity">tokAmb</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="span-level frequency in training set">spanFre</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="token-level frequency in training set">tokFre</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="the length of text span">spanLen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="the length of sentence">sentLen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="span density in a given sentence">spanDen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="oov density in a given sentence">oovDen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="span-level label">tag</a></div>
+</div>
+ <div class='tr'><div class='td'><img src=./ner-fig/LSTM-CNN/wnut16-LSTM-breakdown-spanAmb.png alt="image" /><button onclick="myFunction(80536388)">Click Me</button>
+<div id="80536388" style="display: none;">0:(0,) 1:(0,0.5) 2:(0.5,0.999) 3:(1,)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/wnut16-LSTM-breakdown-tokAmb.png alt="image" /><button onclick="myFunction(71991269)">Click Me</button>
+<div id="71991269" style="display: none;">0:(0,) 1:(0,0.5) 2:(0.5,0.999) 3:(1,)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/wnut16-LSTM-breakdown-spanFre.png alt="image" /><button onclick="myFunction(79628617)">Click Me</button>
+<div id="79628617" style="display: none;">0:(0,) 1:(0.015,) 2:(0.015,0.077) 3:(0.077,1)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/wnut16-LSTM-breakdown-tokFre.png alt="image" /><button onclick="myFunction(2865824)">Click Me</button>
+<div id="2865824" style="display: none;">0:(0,) 1:(0,0.002) 2:(0.002,0.027) 3:(0.027,1)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/wnut16-LSTM-breakdown-spanLen.png alt="image" /><button onclick="myFunction(54803698)">Click Me</button>
+<div id="54803698" style="display: none;">0:(1,) 1:(2,) 2:(3,) 3:(3,14)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/wnut16-LSTM-breakdown-sentLen.png alt="image" /><button onclick="myFunction(17675342)">Click Me</button>
+<div id="17675342" style="display: none;">0:(2,15) 1:(15,20) 2:(20,24) 3:(24,35)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/wnut16-LSTM-breakdown-spanDen.png alt="image" /><button onclick="myFunction(52006140)">Click Me</button>
+<div id="52006140" style="display: none;">0:(0.0294,0.105) 1:(0.105,0.188) 2:(0.188,0.294) 3:(0.294,0.952)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/wnut16-LSTM-breakdown-oovDen.png alt="image" /><button onclick="myFunction(44528766)">Click Me</button>
+<div id="44528766" style="display: none;">0:(0,) 1:(0,0.0909) 2:(0.0909,0.167) 3:(0.167,1)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/wnut16-LSTM-breakdown-tag.png alt="image" /><button onclick="myFunction(13754521)">Click Me</button>
+<div id="13754521" style="display: none;">0:('company',) 1:('facility',) 2:('loc',) 3:('other',) 4:('person',) 5:('product',)</div>
+</div>
+</div>
+</div></h5>
+<h5> Dataset: <i> notemz</i>
+<div class='table_breakdown'>
+ <div class='tr_title'><div class='td'><a href="#" data-toggle="tooltip" title="span-level label ambiguity">spanAmb</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="token-level label ambiguity">tokAmb</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="span-level frequency in training set">spanFre</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="token-level frequency in training set">tokFre</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="the length of text span">spanLen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="the length of sentence">sentLen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="span density in a given sentence">spanDen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="oov density in a given sentence">oovDen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="span-level label">tag</a></div>
+</div>
+ <div class='tr'><div class='td'><img src=./ner-fig/LSTM-CNN/notemz-LSTM-breakdown-spanAmb.png alt="image" /><button onclick="myFunction(48317688)">Click Me</button>
+<div id="48317688" style="display: none;">0:(0,) 1:(0,0.5) 2:(0.5,0.999) 3:(1,)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/notemz-LSTM-breakdown-tokAmb.png alt="image" /><button onclick="myFunction(90564413)">Click Me</button>
+<div id="90564413" style="display: none;">0:(0,) 1:(0,0.5) 2:(0.5,0.999) 3:(1,)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/notemz-LSTM-breakdown-spanFre.png alt="image" /><button onclick="myFunction(57545648)">Click Me</button>
+<div id="57545648" style="display: none;">0:(0,) 1:(0,0.02) 2:(0.02,0.317) 3:(0.317,1)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/notemz-LSTM-breakdown-tokFre.png alt="image" /><button onclick="myFunction(19556022)">Click Me</button>
+<div id="19556022" style="display: none;">0:(0,) 1:(0,0.007) 2:(0.007,0.051) 3:(0.051,1)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/notemz-LSTM-breakdown-spanLen.png alt="image" /><button onclick="myFunction(60731341)">Click Me</button>
+<div id="60731341" style="display: none;">0:(1,) 1:(2,) 2:(3,) 3:(3,8)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/notemz-LSTM-breakdown-sentLen.png alt="image" /><button onclick="myFunction(39112613)">Click Me</button>
+<div id="39112613" style="display: none;">0:(2,20) 1:(20,29) 2:(29,41) 3:(41,76)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/notemz-LSTM-breakdown-spanDen.png alt="image" /><button onclick="myFunction(90415942)">Click Me</button>
+<div id="90415942" style="display: none;">0:(0.0192,0.122) 1:(0.122,0.211) 2:(0.211,0.321) 3:(0.321,1)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/notemz-LSTM-breakdown-oovDen.png alt="image" /><button onclick="myFunction(56043950)">Click Me</button>
+<div id="56043950" style="display: none;">0:(0,) 1:(0,0.0345) 2:(0.0345,0.0645) 3:(0.0645,0.333)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/notemz-LSTM-breakdown-tag.png alt="image" /><button onclick="myFunction(18110393)">Click Me</button>
+<div id="18110393" style="display: none;">0:('cardinal',) 1:('date',) 2:('gpe',) 3:('norp',) 4:('org',) 5:('person',)</div>
+</div>
+</div>
+</div></h5>
+<h5> Dataset: <i> notebc</i>
+<div class='table_breakdown'>
+ <div class='tr_title'><div class='td'><a href="#" data-toggle="tooltip" title="span-level label ambiguity">spanAmb</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="token-level label ambiguity">tokAmb</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="span-level frequency in training set">spanFre</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="token-level frequency in training set">tokFre</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="the length of text span">spanLen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="the length of sentence">sentLen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="span density in a given sentence">spanDen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="oov density in a given sentence">oovDen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="span-level label">tag</a></div>
+</div>
+ <div class='tr'><div class='td'><img src=./ner-fig/LSTM-CNN/notebc-LSTM-breakdown-spanAmb.png alt="image" /><button onclick="myFunction(25138089)">Click Me</button>
+<div id="25138089" style="display: none;">0:(0,) 1:(0,0.5) 2:(0.5,0.999) 3:(1,)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/notebc-LSTM-breakdown-tokAmb.png alt="image" /><button onclick="myFunction(96709860)">Click Me</button>
+<div id="96709860" style="display: none;">0:(0,) 1:(0,0.5) 2:(0.5,0.999) 3:(1,)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/notebc-LSTM-breakdown-spanFre.png alt="image" /><button onclick="myFunction(46557965)">Click Me</button>
+<div id="46557965" style="display: none;">0:(0,) 1:(0,0.038) 2:(0.038,0.167) 3:(0.167,1)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/notebc-LSTM-breakdown-tokFre.png alt="image" /><button onclick="myFunction(48848340)">Click Me</button>
+<div id="48848340" style="display: none;">0:(0,) 1:(0,0.008) 2:(0.008,0.031) 3:(0.031,1)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/notebc-LSTM-breakdown-spanLen.png alt="image" /><button onclick="myFunction(33787903)">Click Me</button>
+<div id="33787903" style="display: none;">0:(1,) 1:(2,) 2:(3,) 3:(3,11)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/notebc-LSTM-breakdown-sentLen.png alt="image" /><button onclick="myFunction(17669361)">Click Me</button>
+<div id="17669361" style="display: none;">0:(2,15) 1:(15,23) 2:(23,39) 3:(39,88)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/notebc-LSTM-breakdown-spanDen.png alt="image" /><button onclick="myFunction(55003369)">Click Me</button>
+<div id="55003369" style="display: none;">0:(0.0114,0.125) 1:(0.125,0.211) 2:(0.211,0.333) 3:(0.333,1)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/notebc-LSTM-breakdown-oovDen.png alt="image" /><button onclick="myFunction(57170057)">Click Me</button>
+<div id="57170057" style="display: none;">0:(0,) 1:(0,0.037) 2:(0.037,0.0625) 3:(0.0625,0.5)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/notebc-LSTM-breakdown-tag.png alt="image" /><button onclick="myFunction(44010969)">Click Me</button>
+<div id="44010969" style="display: none;">0:('cardinal',) 1:('date',) 2:('gpe',) 3:('norp',) 4:('org',) 5:('person',)</div>
+</div>
+</div>
+</div></h5>
+<h5> Dataset: <i> notebn</i>
+<div class='table_breakdown'>
+ <div class='tr_title'><div class='td'><a href="#" data-toggle="tooltip" title="span-level label ambiguity">spanAmb</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="token-level label ambiguity">tokAmb</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="span-level frequency in training set">spanFre</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="token-level frequency in training set">tokFre</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="the length of text span">spanLen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="the length of sentence">sentLen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="span density in a given sentence">spanDen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="oov density in a given sentence">oovDen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="span-level label">tag</a></div>
+</div>
+ <div class='tr'><div class='td'><img src=./ner-fig/LSTM-CNN/notebn-LSTM-breakdown-spanAmb.png alt="image" /><button onclick="myFunction(71539703)">Click Me</button>
+<div id="71539703" style="display: none;">0:(0,) 1:(0,0.5) 2:(0.5,0.999) 3:(1,)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/notebn-LSTM-breakdown-tokAmb.png alt="image" /><button onclick="myFunction(33005723)">Click Me</button>
+<div id="33005723" style="display: none;">0:(0,) 1:(0,0.5) 2:(0.5,0.999) 3:(1,)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/notebn-LSTM-breakdown-spanFre.png alt="image" /><button onclick="myFunction(33069676)">Click Me</button>
+<div id="33069676" style="display: none;">0:(0,) 1:(0,0.035) 2:(0.035,0.18) 3:(0.18,1)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/notebn-LSTM-breakdown-tokFre.png alt="image" /><button onclick="myFunction(37194318)">Click Me</button>
+<div id="37194318" style="display: none;">0:(0,) 1:(0,0.008) 2:(0.008,0.038) 3:(0.038,1)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/notebn-LSTM-breakdown-spanLen.png alt="image" /><button onclick="myFunction(41417407)">Click Me</button>
+<div id="41417407" style="display: none;">0:(1,) 1:(2,) 2:(3,) 3:(3,9)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/notebn-LSTM-breakdown-sentLen.png alt="image" /><button onclick="myFunction(93986764)">Click Me</button>
+<div id="93986764" style="display: none;">0:(2,16) 1:(16,24) 2:(24,34) 3:(34,85)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/notebn-LSTM-breakdown-spanDen.png alt="image" /><button onclick="myFunction(92376049)">Click Me</button>
+<div id="92376049" style="display: none;">0:(0.0154,0.143) 1:(0.143,0.214) 2:(0.214,0.316) 3:(0.316,0.737)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/notebn-LSTM-breakdown-oovDen.png alt="image" /><button onclick="myFunction(4098644)">Click Me</button>
+<div id="4098644" style="display: none;">0:(0,) 1:(0,0.0278) 2:(0.0278,0.0526) 3:(0.0526,0.222)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/notebn-LSTM-breakdown-tag.png alt="image" /><button onclick="myFunction(85257577)">Click Me</button>
+<div id="85257577" style="display: none;">0:('cardinal',) 1:('date',) 2:('gpe',) 3:('norp',) 4:('org',) 5:('person',)</div>
+</div>
+</div>
+</div></h5>
+<h5> Dataset: <i> notewb</i>
+<div class='table_breakdown'>
+ <div class='tr_title'><div class='td'><a href="#" data-toggle="tooltip" title="span-level label ambiguity">spanAmb</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="token-level label ambiguity">tokAmb</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="span-level frequency in training set">spanFre</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="token-level frequency in training set">tokFre</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="the length of text span">spanLen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="the length of sentence">sentLen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="span density in a given sentence">spanDen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="oov density in a given sentence">oovDen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="span-level label">tag</a></div>
+</div>
+ <div class='tr'><div class='td'><img src=./ner-fig/LSTM-CNN/notewb-LSTM-breakdown-spanAmb.png alt="image" /><button onclick="myFunction(73075256)">Click Me</button>
+<div id="73075256" style="display: none;">0:(0,) 1:(0,0.5) 2:(0.5,0.999) 3:(1,)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/notewb-LSTM-breakdown-tokAmb.png alt="image" /><button onclick="myFunction(48065599)">Click Me</button>
+<div id="48065599" style="display: none;">0:(0,) 1:(0,0.5) 2:(0.5,0.999) 3:(1,)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/notewb-LSTM-breakdown-spanFre.png alt="image" /><button onclick="myFunction(43960715)">Click Me</button>
+<div id="43960715" style="display: none;">0:(0,) 1:(0,0.019) 2:(0.019,0.166) 3:(0.166,1)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/notewb-LSTM-breakdown-tokFre.png alt="image" /><button onclick="myFunction(9363929)">Click Me</button>
+<div id="9363929" style="display: none;">0:(0,) 1:(0,0.004) 2:(0.004,0.029) 3:(0.029,1)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/notewb-LSTM-breakdown-spanLen.png alt="image" /><button onclick="myFunction(19723063)">Click Me</button>
+<div id="19723063" style="display: none;">0:(1,) 1:(2,) 2:(3,) 3:(3,7)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/notewb-LSTM-breakdown-sentLen.png alt="image" /><button onclick="myFunction(57682536)">Click Me</button>
+<div id="57682536" style="display: none;">0:(2,17) 1:(17,27) 2:(27,41) 3:(41,104)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/notewb-LSTM-breakdown-spanDen.png alt="image" /><button onclick="myFunction(9619601)">Click Me</button>
+<div id="9619601" style="display: none;">0:(0.0137,0.0909) 1:(0.0909,0.171) 2:(0.171,0.267) 3:(0.267,1)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/notewb-LSTM-breakdown-oovDen.png alt="image" /><button onclick="myFunction(91338222)">Click Me</button>
+<div id="91338222" style="display: none;">0:(0,) 1:(0,0.0417) 2:(0.0417,0.0625) 3:(0.0625,0.5)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/notewb-LSTM-breakdown-tag.png alt="image" /><button onclick="myFunction(75688079)">Click Me</button>
+<div id="75688079" style="display: none;">0:('cardinal',) 1:('date',) 2:('gpe',) 3:('norp',) 4:('org',) 5:('person',)</div>
+</div>
+</div>
+</div></h5>
+<li><b>Model Setting:</b> <i>CNN</i></li>
+<h5> Dataset: <i> conll03</i>
+<div class='table_breakdown'>
+ <div class='tr_title'><div class='td'><a href="#" data-toggle="tooltip" title="span-level label ambiguity">spanAmb</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="token-level label ambiguity">tokAmb</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="span-level frequency in training set">spanFre</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="token-level frequency in training set">tokFre</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="the length of text span">spanLen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="the length of sentence">sentLen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="span density in a given sentence">spanDen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="oov density in a given sentence">oovDen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="span-level label">tag</a></div>
+</div>
+ <div class='tr'><div class='td'><img src=./ner-fig/LSTM-CNN/conll03-CNN-breakdown-spanAmb.png alt="image" /><button onclick="myFunction(46149831)">Click Me</button>
+<div id="46149831" style="display: none;">0:(0,) 1:(0,0.5) 2:(0.5,0.999) 3:(1,)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/conll03-CNN-breakdown-tokAmb.png alt="image" /><button onclick="myFunction(54242722)">Click Me</button>
+<div id="54242722" style="display: none;">0:(0,) 1:(0,0.5) 2:(0.5,0.999) 3:(1,)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/conll03-CNN-breakdown-spanFre.png alt="image" /><button onclick="myFunction(25194140)">Click Me</button>
+<div id="25194140" style="display: none;">0:(0,) 1:(0,0.032) 2:(0.032,0.173) 3:(0.173,1)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/conll03-CNN-breakdown-tokFre.png alt="image" /><button onclick="myFunction(88132285)">Click Me</button>
+<div id="88132285" style="display: none;">0:(0,) 1:(0,0.003) 2:(0.003,0.015) 3:(0.015,1)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/conll03-CNN-breakdown-spanLen.png alt="image" /><button onclick="myFunction(97211689)">Click Me</button>
+<div id="97211689" style="display: none;">0:(1,) 1:(2,) 2:(3,) 3:(3,6)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/conll03-CNN-breakdown-sentLen.png alt="image" /><button onclick="myFunction(82348197)">Click Me</button>
+<div id="82348197" style="display: none;">0:(1,7) 1:(7,16) 2:(16,31) 3:(31,124)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/conll03-CNN-breakdown-spanDen.png alt="image" /><button onclick="myFunction(16940286)">Click Me</button>
+<div id="16940286" style="display: none;">0:(0.0222,0.15) 1:(0.15,0.258) 2:(0.258,0.429) 3:(0.429,1)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/conll03-CNN-breakdown-oovDen.png alt="image" /><button onclick="myFunction(99550341)">Click Me</button>
+<div id="99550341" style="display: none;">0:(0,) 1:(0,0.0667) 2:(0.0667,0.203) 3:(0.203,1)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/conll03-CNN-breakdown-tag.png alt="image" /><button onclick="myFunction(9801581)">Click Me</button>
+<div id="9801581" style="display: none;">0:('loc',) 1:('misc',) 2:('org',) 3:('per',)</div>
+</div>
+</div>
+</div>
+<h5> Dataset: <i> wnut16</i>
+<div class='table_breakdown'>
+ <div class='tr_title'><div class='td'><a href="#" data-toggle="tooltip" title="span-level label ambiguity">spanAmb</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="token-level label ambiguity">tokAmb</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="span-level frequency in training set">spanFre</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="token-level frequency in training set">tokFre</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="the length of text span">spanLen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="the length of sentence">sentLen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="span density in a given sentence">spanDen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="oov density in a given sentence">oovDen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="span-level label">tag</a></div>
+</div>
+ <div class='tr'><div class='td'><img src=./ner-fig/LSTM-CNN/wnut16-CNN-breakdown-spanAmb.png alt="image" /><button onclick="myFunction(27879539)">Click Me</button>
+<div id="27879539" style="display: none;">0:(0,) 1:(0,0.5) 2:(0.5,0.999) 3:(1,)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/wnut16-CNN-breakdown-tokAmb.png alt="image" /><button onclick="myFunction(67855434)">Click Me</button>
+<div id="67855434" style="display: none;">0:(0,) 1:(0,0.5) 2:(0.5,0.999) 3:(1,)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/wnut16-CNN-breakdown-spanFre.png alt="image" /><button onclick="myFunction(44257525)">Click Me</button>
+<div id="44257525" style="display: none;">0:(0,) 1:(0.015,) 2:(0.015,0.077) 3:(0.077,1)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/wnut16-CNN-breakdown-tokFre.png alt="image" /><button onclick="myFunction(59740657)">Click Me</button>
+<div id="59740657" style="display: none;">0:(0,) 1:(0,0.002) 2:(0.002,0.027) 3:(0.027,1)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/wnut16-CNN-breakdown-spanLen.png alt="image" /><button onclick="myFunction(55017758)">Click Me</button>
+<div id="55017758" style="display: none;">0:(1,) 1:(2,) 2:(3,) 3:(3,14)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/wnut16-CNN-breakdown-sentLen.png alt="image" /><button onclick="myFunction(65549376)">Click Me</button>
+<div id="65549376" style="display: none;">0:(2,15) 1:(15,20) 2:(20,24) 3:(24,35)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/wnut16-CNN-breakdown-spanDen.png alt="image" /><button onclick="myFunction(23136227)">Click Me</button>
+<div id="23136227" style="display: none;">0:(0.0294,0.105) 1:(0.105,0.188) 2:(0.188,0.294) 3:(0.294,0.952)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/wnut16-CNN-breakdown-oovDen.png alt="image" /><button onclick="myFunction(75703377)">Click Me</button>
+<div id="75703377" style="display: none;">0:(0,) 1:(0,0.0909) 2:(0.0909,0.167) 3:(0.167,1)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/wnut16-CNN-breakdown-tag.png alt="image" /><button onclick="myFunction(82938586)">Click Me</button>
+<div id="82938586" style="display: none;">0:('company',) 1:('facility',) 2:('loc',) 3:('other',) 4:('person',) 5:('product',)</div>
+</div>
+</div>
+</div>
+<h5> Dataset: <i> notemz</i>
+<div class='table_breakdown'>
+ <div class='tr_title'><div class='td'><a href="#" data-toggle="tooltip" title="span-level label ambiguity">spanAmb</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="token-level label ambiguity">tokAmb</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="span-level frequency in training set">spanFre</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="token-level frequency in training set">tokFre</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="the length of text span">spanLen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="the length of sentence">sentLen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="span density in a given sentence">spanDen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="oov density in a given sentence">oovDen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="span-level label">tag</a></div>
+</div>
+ <div class='tr'><div class='td'><img src=./ner-fig/LSTM-CNN/notemz-CNN-breakdown-spanAmb.png alt="image" /><button onclick="myFunction(4288798)">Click Me</button>
+<div id="4288798" style="display: none;">0:(0,) 1:(0,0.5) 2:(0.5,0.999) 3:(1,)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/notemz-CNN-breakdown-tokAmb.png alt="image" /><button onclick="myFunction(59072241)">Click Me</button>
+<div id="59072241" style="display: none;">0:(0,) 1:(0,0.5) 2:(0.5,0.999) 3:(1,)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/notemz-CNN-breakdown-spanFre.png alt="image" /><button onclick="myFunction(99756705)">Click Me</button>
+<div id="99756705" style="display: none;">0:(0,) 1:(0,0.02) 2:(0.02,0.317) 3:(0.317,1)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/notemz-CNN-breakdown-tokFre.png alt="image" /><button onclick="myFunction(8067290)">Click Me</button>
+<div id="8067290" style="display: none;">0:(0,) 1:(0,0.007) 2:(0.007,0.051) 3:(0.051,1)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/notemz-CNN-breakdown-spanLen.png alt="image" /><button onclick="myFunction(59957559)">Click Me</button>
+<div id="59957559" style="display: none;">0:(1,) 1:(2,) 2:(3,) 3:(3,8)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/notemz-CNN-breakdown-sentLen.png alt="image" /><button onclick="myFunction(53639669)">Click Me</button>
+<div id="53639669" style="display: none;">0:(2,20) 1:(20,29) 2:(29,41) 3:(41,76)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/notemz-CNN-breakdown-spanDen.png alt="image" /><button onclick="myFunction(35907437)">Click Me</button>
+<div id="35907437" style="display: none;">0:(0.0192,0.122) 1:(0.122,0.211) 2:(0.211,0.321) 3:(0.321,1)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/notemz-CNN-breakdown-oovDen.png alt="image" /><button onclick="myFunction(30434740)">Click Me</button>
+<div id="30434740" style="display: none;">0:(0,) 1:(0,0.0345) 2:(0.0345,0.0645) 3:(0.0645,0.333)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/notemz-CNN-breakdown-tag.png alt="image" /><button onclick="myFunction(2886287)">Click Me</button>
+<div id="2886287" style="display: none;">0:('cardinal',) 1:('date',) 2:('gpe',) 3:('norp',) 4:('org',) 5:('person',)</div>
+</div>
+</div>
+</div>
+<h5> Dataset: <i> notebc</i>
+<div class='table_breakdown'>
+ <div class='tr_title'><div class='td'><a href="#" data-toggle="tooltip" title="span-level label ambiguity">spanAmb</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="token-level label ambiguity">tokAmb</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="span-level frequency in training set">spanFre</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="token-level frequency in training set">tokFre</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="the length of text span">spanLen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="the length of sentence">sentLen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="span density in a given sentence">spanDen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="oov density in a given sentence">oovDen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="span-level label">tag</a></div>
+</div>
+ <div class='tr'><div class='td'><img src=./ner-fig/LSTM-CNN/notebc-CNN-breakdown-spanAmb.png alt="image" /><button onclick="myFunction(15516782)">Click Me</button>
+<div id="15516782" style="display: none;">0:(0,) 1:(0,0.5) 2:(0.5,0.999) 3:(1,)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/notebc-CNN-breakdown-tokAmb.png alt="image" /><button onclick="myFunction(83499938)">Click Me</button>
+<div id="83499938" style="display: none;">0:(0,) 1:(0,0.5) 2:(0.5,0.999) 3:(1,)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/notebc-CNN-breakdown-spanFre.png alt="image" /><button onclick="myFunction(83524190)">Click Me</button>
+<div id="83524190" style="display: none;">0:(0,) 1:(0,0.038) 2:(0.038,0.167) 3:(0.167,1)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/notebc-CNN-breakdown-tokFre.png alt="image" /><button onclick="myFunction(24779499)">Click Me</button>
+<div id="24779499" style="display: none;">0:(0,) 1:(0,0.008) 2:(0.008,0.031) 3:(0.031,1)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/notebc-CNN-breakdown-spanLen.png alt="image" /><button onclick="myFunction(24480368)">Click Me</button>
+<div id="24480368" style="display: none;">0:(1,) 1:(2,) 2:(3,) 3:(3,11)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/notebc-CNN-breakdown-sentLen.png alt="image" /><button onclick="myFunction(37425585)">Click Me</button>
+<div id="37425585" style="display: none;">0:(2,15) 1:(15,23) 2:(23,39) 3:(39,88)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/notebc-CNN-breakdown-spanDen.png alt="image" /><button onclick="myFunction(71360598)">Click Me</button>
+<div id="71360598" style="display: none;">0:(0.0114,0.125) 1:(0.125,0.211) 2:(0.211,0.333) 3:(0.333,1)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/notebc-CNN-breakdown-oovDen.png alt="image" /><button onclick="myFunction(96146474)">Click Me</button>
+<div id="96146474" style="display: none;">0:(0,) 1:(0,0.037) 2:(0.037,0.0625) 3:(0.0625,0.5)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/notebc-CNN-breakdown-tag.png alt="image" /><button onclick="myFunction(30282448)">Click Me</button>
+<div id="30282448" style="display: none;">0:('cardinal',) 1:('date',) 2:('gpe',) 3:('norp',) 4:('org',) 5:('person',)</div>
+</div>
+</div>
+</div>
+<h5> Dataset: <i> notebn</i>
+<div class='table_breakdown'>
+ <div class='tr_title'><div class='td'><a href="#" data-toggle="tooltip" title="span-level label ambiguity">spanAmb</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="token-level label ambiguity">tokAmb</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="span-level frequency in training set">spanFre</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="token-level frequency in training set">tokFre</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="the length of text span">spanLen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="the length of sentence">sentLen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="span density in a given sentence">spanDen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="oov density in a given sentence">oovDen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="span-level label">tag</a></div>
+</div>
+ <div class='tr'><div class='td'><img src=./ner-fig/LSTM-CNN/notebn-CNN-breakdown-spanAmb.png alt="image" /><button onclick="myFunction(1355954)">Click Me</button>
+<div id="1355954" style="display: none;">0:(0,) 1:(0,0.5) 2:(0.5,0.999) 3:(1,)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/notebn-CNN-breakdown-tokAmb.png alt="image" /><button onclick="myFunction(23020718)">Click Me</button>
+<div id="23020718" style="display: none;">0:(0,) 1:(0,0.5) 2:(0.5,0.999) 3:(1,)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/notebn-CNN-breakdown-spanFre.png alt="image" /><button onclick="myFunction(65331321)">Click Me</button>
+<div id="65331321" style="display: none;">0:(0,) 1:(0,0.035) 2:(0.035,0.18) 3:(0.18,1)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/notebn-CNN-breakdown-tokFre.png alt="image" /><button onclick="myFunction(63072015)">Click Me</button>
+<div id="63072015" style="display: none;">0:(0,) 1:(0,0.008) 2:(0.008,0.038) 3:(0.038,1)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/notebn-CNN-breakdown-spanLen.png alt="image" /><button onclick="myFunction(71632295)">Click Me</button>
+<div id="71632295" style="display: none;">0:(1,) 1:(2,) 2:(3,) 3:(3,9)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/notebn-CNN-breakdown-sentLen.png alt="image" /><button onclick="myFunction(55051907)">Click Me</button>
+<div id="55051907" style="display: none;">0:(2,16) 1:(16,24) 2:(24,34) 3:(34,85)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/notebn-CNN-breakdown-spanDen.png alt="image" /><button onclick="myFunction(73520226)">Click Me</button>
+<div id="73520226" style="display: none;">0:(0.0154,0.143) 1:(0.143,0.214) 2:(0.214,0.316) 3:(0.316,0.737)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/notebn-CNN-breakdown-oovDen.png alt="image" /><button onclick="myFunction(33693553)">Click Me</button>
+<div id="33693553" style="display: none;">0:(0,) 1:(0,0.0278) 2:(0.0278,0.0526) 3:(0.0526,0.222)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/notebn-CNN-breakdown-tag.png alt="image" /><button onclick="myFunction(83951768)">Click Me</button>
+<div id="83951768" style="display: none;">0:('cardinal',) 1:('date',) 2:('gpe',) 3:('norp',) 4:('org',) 5:('person',)</div>
+</div>
+</div>
+</div>
+<h5> Dataset: <i> notewb</i>
+<div class='table_breakdown'>
+ <div class='tr_title'><div class='td'><a href="#" data-toggle="tooltip" title="span-level label ambiguity">spanAmb</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="token-level label ambiguity">tokAmb</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="span-level frequency in training set">spanFre</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="token-level frequency in training set">tokFre</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="the length of text span">spanLen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="the length of sentence">sentLen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="span density in a given sentence">spanDen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="oov density in a given sentence">oovDen</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="span-level label">tag</a></div>
+</div>
+ <div class='tr'><div class='td'><img src=./ner-fig/LSTM-CNN/notewb-CNN-breakdown-spanAmb.png alt="image" /><button onclick="myFunction(33442383)">Click Me</button>
+<div id="33442383" style="display: none;">0:(0,) 1:(0,0.5) 2:(0.5,0.999) 3:(1,)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/notewb-CNN-breakdown-tokAmb.png alt="image" /><button onclick="myFunction(73468188)">Click Me</button>
+<div id="73468188" style="display: none;">0:(0,) 1:(0,0.5) 2:(0.5,0.999) 3:(1,)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/notewb-CNN-breakdown-spanFre.png alt="image" /><button onclick="myFunction(59018844)">Click Me</button>
+<div id="59018844" style="display: none;">0:(0,) 1:(0,0.019) 2:(0.019,0.166) 3:(0.166,1)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/notewb-CNN-breakdown-tokFre.png alt="image" /><button onclick="myFunction(58983839)">Click Me</button>
+<div id="58983839" style="display: none;">0:(0,) 1:(0,0.004) 2:(0.004,0.029) 3:(0.029,1)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/notewb-CNN-breakdown-spanLen.png alt="image" /><button onclick="myFunction(26152791)">Click Me</button>
+<div id="26152791" style="display: none;">0:(1,) 1:(2,) 2:(3,) 3:(3,7)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/notewb-CNN-breakdown-sentLen.png alt="image" /><button onclick="myFunction(73482333)">Click Me</button>
+<div id="73482333" style="display: none;">0:(2,17) 1:(17,27) 2:(27,41) 3:(41,104)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/notewb-CNN-breakdown-spanDen.png alt="image" /><button onclick="myFunction(43747855)">Click Me</button>
+<div id="43747855" style="display: none;">0:(0.0137,0.0909) 1:(0.0909,0.171) 2:(0.171,0.267) 3:(0.267,1)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/notewb-CNN-breakdown-oovDen.png alt="image" /><button onclick="myFunction(29446924)">Click Me</button>
+<div id="29446924" style="display: none;">0:(0,) 1:(0,0.0417) 2:(0.0417,0.0625) 3:(0.0625,0.5)</div>
+</div>
+<div class='td'><img src=./ner-fig/LSTM-CNN/notewb-CNN-breakdown-tag.png alt="image" /><button onclick="myFunction(95319558)">Click Me</button>
+<div id="95319558" style="display: none;">0:('cardinal',) 1:('date',) 2:('gpe',) 3:('norp',) 4:('org',) 5:('person',)</div>
+</div>
+</div>
+</div>
+
+
+
+
+    <HR style="border:1 dashed #987cb9" width="100%" color="gray" SIZE=2>  
+    <!------------------------------------------------------------------------- -->
+
+    <!------------------------------------------------------------------------- -->
+    <h3>3. Self-diagnosis </h3>
+
+    <li><b>Model Setting:</b> <i>LSTM</i></li>
+<div class='table_self_diagnosis'>
+ <div class='tr_title'><div class='td'><a href="#" data-toggle="tooltip" title="dataset: CoNLL 2003">conll03</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="">wnut16</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="dataset: ontonotes-mz">notemz</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="dataset: ontonotes-bc">notebc</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="">notebn</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="dataset: ontonotes-wb">notewb</a></div>
+</div>
+ <div class='tr'><div class='td'><a href="#" data-toggle="tooltip" title=""><img src=./ner-fig/LSTM-CNN/conll03-LSTM-selfdiag.png alt="image" /></a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title=""><img src=./ner-fig/LSTM-CNN/wnut16-LSTM-selfdiag.png alt="image" /></a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title=""><img src=./ner-fig/LSTM-CNN/notemz-LSTM-selfdiag.png alt="image" /></a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title=""><img src=./ner-fig/LSTM-CNN/notebc-LSTM-selfdiag.png alt="image" /></a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title=""><img src=./ner-fig/LSTM-CNN/notebn-LSTM-selfdiag.png alt="image" /></a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title=""><img src=./ner-fig/LSTM-CNN/notewb-LSTM-selfdiag.png alt="image" /></a></div>
+</div>
+</div>
+<br></br><li><b>Model Setting:</b> <i>CNN</i></li>
+<div class='table_self_diagnosis'>
+ <div class='tr_title'><div class='td'><a href="#" data-toggle="tooltip" title="dataset: CoNLL 2003">conll03</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="">wnut16</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="dataset: ontonotes-mz">notemz</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="dataset: ontonotes-bc">notebc</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="">notebn</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="dataset: ontonotes-wb">notewb</a></div>
+</div>
+ <div class='tr'><div class='td'><a href="#" data-toggle="tooltip" title=""><img src=./ner-fig/LSTM-CNN/conll03-CNN-selfdiag.png alt="image" /></a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title=""><img src=./ner-fig/LSTM-CNN/wnut16-CNN-selfdiag.png alt="image" /></a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title=""><img src=./ner-fig/LSTM-CNN/notemz-CNN-selfdiag.png alt="image" /></a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title=""><img src=./ner-fig/LSTM-CNN/notebc-CNN-selfdiag.png alt="image" /></a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title=""><img src=./ner-fig/LSTM-CNN/notebn-CNN-selfdiag.png alt="image" /></a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title=""><img src=./ner-fig/LSTM-CNN/notewb-CNN-selfdiag.png alt="image" /></a></div>
+</div>
+</div>
+
+
+
+    <HR style="border:1 dashed #987cb9" width="100%" color="gray" SIZE=2>  
+    <!------------------------------------------------------------------------- -->
+
+
+    <h3>4. Aided-diagnosis </h3>
+    <li><b>Model Setting:</b> <i>LSTM - CNN</i></li>
+    <div class='table_aided_diagnosis'>
+ <div class='tr_title'><div class='td'><a href="#" data-toggle="tooltip" title="dataset: CoNLL 2003">conll03</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="">wnut16</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="dataset: ontonotes-mz">notemz</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="dataset: ontonotes-bc">notebc</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="">notebn</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="dataset: ontonotes-wb">notewb</a></div>
+</div>
+ <div class='tr'><div class='td'><a href="#" data-toggle="tooltip" title=""><img src=./ner-fig/LSTM-CNN/conll03-LSTM_CNN-aideddiag.png alt="image" /></a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title=""><img src=./ner-fig/LSTM-CNN/wnut16-LSTM_CNN-aideddiag.png alt="image" /></a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title=""><img src=./ner-fig/LSTM-CNN/notemz-LSTM_CNN-aideddiag.png alt="image" /></a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title=""><img src=./ner-fig/LSTM-CNN/notebc-LSTM_CNN-aideddiag.png alt="image" /></a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title=""><img src=./ner-fig/LSTM-CNN/notebn-LSTM_CNN-aideddiag.png alt="image" /></a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title=""><img src=./ner-fig/LSTM-CNN/notewb-LSTM_CNN-aideddiag.png alt="image" /></a></div>
+</div>
+</div>
+
+
+    <HR style="border:1 dashed #987cb9" width="100%" color="gray" SIZE=2>  
+    <!------------------------------------------------------------------------- -->
+
+    <h3>5. Heatmap </h3>
+    <li><b>Model Setting:</b> <i>LSTM - CNN</i></li>
+    <div class='table_aided_diagnosis'>
+ <div class='tr_title'><div class='td'><a href="#" data-toggle="tooltip" title="dataset: CoNLL 2003">conll03</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="">wnut16</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="dataset: ontonotes-mz">notemz</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="dataset: ontonotes-bc">notebc</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="">notebn</a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title="dataset: ontonotes-wb">notewb</a></div>
+</div>
+ <div class='tr'><div class='td'><a href="#" data-toggle="tooltip" title=""><img src=./ner-fig/LSTM-CNN/conll03-LSTM_CNN-heatmap.png alt="image" /></a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title=""><img src=./ner-fig/LSTM-CNN/wnut16-LSTM_CNN-heatmap.png alt="image" /></a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title=""><img src=./ner-fig/LSTM-CNN/notemz-LSTM_CNN-heatmap.png alt="image" /></a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title=""><img src=./ner-fig/LSTM-CNN/notebc-LSTM_CNN-heatmap.png alt="image" /></a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title=""><img src=./ner-fig/LSTM-CNN/notebn-LSTM_CNN-heatmap.png alt="image" /></a></div>
+<div class='td'><a href="#" data-toggle="tooltip" title=""><img src=./ner-fig/LSTM-CNN/notewb-LSTM_CNN-heatmap.png alt="image" /></a></div>
+</div>
+</div>
+
+
+
+
+
+  </body>
+</html>
+
+
+
+
+
