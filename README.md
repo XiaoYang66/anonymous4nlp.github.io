@@ -92,7 +92,7 @@ Put the result-file of your model on this path: `preComputed/ner/result/`. In or
 - **The result file must include three columns of words, true-tags, and predicted-tags, separated by space.** If your result file is not in the required format, you can modify the function `read_data()` in file `tensorEvaluation-ner.py` to adaptive to your format. 
 
 Here, we give an example of result file format as follow:
-!(http)
+![show fig](https://github.com/anonymous4nlp/anonymous4nlp.github.io/blob/master/img/data-format.png)
 
 
 
