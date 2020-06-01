@@ -27,7 +27,7 @@ The shell scripts include the following three aspects:
 
 - `tensorEvaluation-ner.py` -> Calculate the dependent results of fine-grained analysis.
 
-- `genFig.py` -> Drawing figures to show the results of the fine-grained analysis, including histograms and heat maps.
+- `genFig.py` -> Drawing figures to show the results of the fine-grained analysis.
 
 - `genHtml.py` -> Put the figures drawing in the previous step into the web page.
 
@@ -35,25 +35,24 @@ After running the above command, a web page named "tEval-ner.html" will be gener
 
 
 ## Results
-We provide analysis and diagnosis of model architectures and pre-trained knowledge on six data sets, and the results are shown on the following web pages.
+We provide analysis and diagnosis of model architectures and pre-trained knowledge on **six** data sets, and the results are shown on the following web pages.
 
-CRF-MLP: https://anonymous4nlp.github.io/analysis/tEval-ner-6datas-crf_mlp.html
+- **CRF-MLP**: https://anonymous4nlp.github.io/analysis/tEval-ner-6datas-crf_mlp.html
 
-LSTM-CNN: https://anonymous4nlp.github.io/analysis/tEval-ner-6datas-lstm_cnn.html
+- **LSTM-CNN**: https://anonymous4nlp.github.io/analysis/tEval-ner-6datas-lstm_cnn.html
 
-BERT-ELMo: https://anonymous4nlp.github.io/analysis/tEval-ner-6datas-bert_elmo.html
+- **BERT-ELMo**: https://anonymous4nlp.github.io/analysis/tEval-ner-6datas-bert_elmo.html
 
-Flair-ELMo: https://anonymous4nlp.github.io/analysis/tEval-ner-6datas-flair_elmo.html
+- **Flair-ELMo**: https://anonymous4nlp.github.io/analysis/tEval-ner-6datas-flair_elmo.html
 
-LSTM-CNN: https://anonymous4nlp.github.io/analysis/tEval-ner-conll03-lstm_cnn.html
+- **LSTM-CNN for CoNLL-2003**: https://anonymous4nlp.github.io/analysis/tEval-ner-conll03-lstm_cnn.html
 
 
 ## The analysis results
 
-We provide five aspects of the analysis and diagnostic model results.
+Our model analysis and diagnosis includes **five** aspects: 1) Holistic Results; 2) Break-down Performance; 3) Self-diagnosis; 4) Aided-diagnosis; 5) Heatmap. Following, we give an example of the fine-grained analysis of the LSTM-system and CNN-system pair on **six** datasets.
 
-The analysis and diagnosis contains five aspects, as follows we give the analysis results of LSTM-system & CNN-system.
-1) Holistic Result
+1) Holistic Results
 
 ![show fig](https://github.com/anonymous4nlp/anonymous4nlp.github.io/raw/master/img/1holistic-result.png)
 
