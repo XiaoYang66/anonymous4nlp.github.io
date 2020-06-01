@@ -11,13 +11,6 @@ The implementation of interpretable evaluation for NER in our paper:
 * It can help us quickly analyze and diagnose the strengths and weaknesses of a model.
 
 
-## Datasets
-
-The datasets utilized in our paper including:
-
-- CoNLL-2003 (in this repository.)
-- WNUT-2016 (in this repository.)
-- OntoNotes 5.0 (WB, MZ, BC, BN) (Yor can download from [LDC](https://catalog.ldc.upenn.edu/LDC2013T19) )
 
 
 ## Requirements
@@ -41,6 +34,13 @@ The shell scripts include the following three aspects:
 
 After running the above command, a web page named "tEval-ner.html" will be generated for displaying the analysis and diagnosis results of the models. You can check the results from this link: https://anonymous4nlp.github.io/analysis/tEval-ner.html
 
+## Datasets
+
+The datasets utilized in our paper including:
+
+- CoNLL-2003 (in this repository.)
+- WNUT-2016 (in this repository.)
+- OntoNotes 5.0 (WB, MZ, BC, BN) (Yor can download from [LDC](https://catalog.ldc.upenn.edu/LDC2013T19) )
 
 ## Results
 We provide analysis and diagnosis of model architectures and pre-trained knowledge on **six** data sets, and the results are shown on the following web pages.
