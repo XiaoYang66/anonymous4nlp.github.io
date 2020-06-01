@@ -18,7 +18,7 @@ texlive
 
 6datas, Flair-ELMo: https://anonymous4nlp.github.io/analysis/tEval-ner-6datas-flair_elmo.html
 
-conll03, LSTM-CNN: https://anonymous4nlp.github.io/analysis/tEval-ner.html
+conll03, LSTM-CNN: https://anonymous4nlp.github.io/analysis/tEval-ner-conll03-lstm_cnn.html
 
 
 ## Reproducing Results
