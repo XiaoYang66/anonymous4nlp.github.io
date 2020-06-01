@@ -86,37 +86,13 @@ CNN: ![show fig](https://github.com/anonymous4nlp/anonymous4nlp.github.io/raw/ma
 
 Put the result-file of your model on this path: `preComputed/ner/result/`. In order to carry out model diagnosis, two or more model result files must be included. You can also choose one of the result files provided by us as the reference model.
 
-###Note: 
-- **More than two result files are required.** 
+### Note: 
+- **More than two result files are required.**  Because comparative-diagnosis is to compare the strengths and weaknesses of the model architectures and pre-trained knowledge between two or more models, it is necessary to input as least two model results. 
+
 - **The result file must include three columns of words, true-tags, and predicted-tags, separated by space.** If your result file is not in the required format, you can modify the function `read_data()` in file `tensorEvaluation-ner.py` to adaptive to your format. 
 
 Here, we give an example of result file format as follow:
-
-**word** **true-tag** **predicted-tag**  (separated by space)
-
-SOCCER     O              O
-
-- O O
-
-JAPAN     B-LOC          B-LOC
-
-GET        O              O
-
-LUCKY      O              O
-
-WIN        O              O
-
-,          O              O
-
-CHINA     B-PER          B-LOC
-
-IN         O              O
-
-SURPRISE   O              O
-
-DEFEAT     O              O
-
-.          O              O
+!(http)
 
 
 
