@@ -1,7 +1,15 @@
-# TensorEvaluation for NER
-The implementation of TensorEvaluation for NER in our paper:
+# Interpretable Evaluation for NER
+The implementation of interpretable evaluation for NER in our paper:
 
 "Interpretable Multi-dataset Evaluation for Named Entity Recognition"
+
+## Advantages of This Codes
+* The process of generating analysis and diagnosis figures, the latex-sources (utilized to generate the figures), and the web page (used to display the results) are automatic.
+* It is easy to delete or add attributes by simply modifying the `conf.ner-aspects`.
+* It is easy to change the bucketing method for a specific attribute by modifying the definition of the bucketing method in  `conf.ner-aspects`.
+* It is easy to extend this code for other sequence labeling tasks. Only a few parameters in the `run_task_ner.sh` need to be modified, such as `task_type` and  `path_attribute_conf`. (It may be necessary to add or delete attributes appropriately.)
+* It can help us quickly analyze and diagnose the strengths and weaknesses of a model.
+
 
 ## Datasets
 
