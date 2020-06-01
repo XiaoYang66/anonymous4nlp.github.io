@@ -27,6 +27,7 @@ Run run_task_ner.sh: ./run_task_ner.sh, and it will generate the html file which
 ## The analysis results
 The analysis results contain five aspects, as follows we give the analysis results of LSTM-system & CNN-system.
 1) Holistic Result
+
 ![show fig](https://github.com/anonymous4nlp/anonymous4nlp.github.io/raw/master/img/1holistic-result.png)
 
 2) Break-down Performance
