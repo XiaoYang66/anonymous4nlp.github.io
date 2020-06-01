@@ -7,13 +7,9 @@ The implementation of TensorEvaluation for NER in our paper:
 
 The datasets utilized in our paper including:
 
-#### CoNLL-2003 (in this repository.)
-#### WNUT-2016 (in this repository.)
-<<<<<<< HEAD
-#### OntoNotes 5.0 (WB, MZ, BC, BN) (Yor can download from [LDC](https://catalog.ldc.upenn.edu/LDC2013T19) )
-=======
-#### OntoNotes 5.0 [WB, MZ, BC, BN](https://catalog.ldc.upenn.edu/LDC2013T19)
->>>>>>> 77e948cb9951aa14404961c53353d9a5362a3a63
+- CoNLL-2003 (in this repository.)
+- WNUT-2016 (in this repository.)
+- OntoNotes 5.0 (WB, MZ, BC, BN) (Yor can download from [LDC](https://catalog.ldc.upenn.edu/LDC2013T19) )
 
 
 ## Requirements
@@ -27,7 +23,6 @@ The datasets utilized in our paper including:
 
 `./run_task_ner.sh`
 
-<<<<<<< HEAD
 The shell scripts include the following three aspects:
 
 - `tensorEvaluation-ner.py` -> Calculate the dependent results of fine-grained analysis.
@@ -36,8 +31,6 @@ The shell scripts include the following three aspects:
 
 - `genHtml.py` -> Put the figures drawing in the previous step into the web page.
 
-=======
->>>>>>> 77e948cb9951aa14404961c53353d9a5362a3a63
 After running the above command, a web page named "tEval-ner.html" will be generated for displaying the analysis and diagnosis results of the models. You can check the results from this link: https://anonymous4nlp.github.io/analysis/tEval-ner.html
 
 
@@ -61,25 +54,15 @@ We provide five aspects of the analysis and diagnostic model results.
 
 The analysis and diagnosis contains five aspects, as follows we give the analysis results of LSTM-system & CNN-system.
 1) Holistic Result
-<<<<<<< HEAD
-=======
 
->>>>>>> c7363b0c2ece05594cbc0bfe0349a974403a7ca1
 ![show fig](https://github.com/anonymous4nlp/anonymous4nlp.github.io/raw/master/img/1holistic-result.png)
 
 2) Break-down Performance
 
-<<<<<<< HEAD
-LSTM: !(https://github.com/anonymous4nlp/anonymous4nlp.github.io/raw/master/img/2breakdown-lstm.png)
+LSTM: ![show fig](https://github.com/anonymous4nlp/anonymous4nlp.github.io/raw/master/img/2breakdown-lstm.png)
 
 CNN: ![show fig](https://github.com/anonymous4nlp/anonymous4nlp.github.io/raw/master/img/2breakdown-cnn.png)
-=======
-LSTM: 
-![show fig](https://github.com/anonymous4nlp/anonymous4nlp.github.io/raw/master/img/2breakdown-lstm.png)
 
-CNN: 
-![show fig](https://github.com/anonymous4nlp/anonymous4nlp.github.io/raw/master/img/2breakdown-cnn.png)
->>>>>>> c7363b0c2ece05594cbc0bfe0349a974403a7ca1
 
 3) Self-diagnosis
 
