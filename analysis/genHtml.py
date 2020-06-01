@@ -96,14 +96,14 @@ args = parser.parse_args()
 
 
 
-dict_att2desc = {"spanAmb":"span-level label ambiguity", \
-                "tokAmb":"token-level label ambiguity", \
-                "spanFre":"span-level frequency in training set", \
-                "tokFre":"token-level frequency in training set",\
-                "spanLen":"the length of text span", \
-                "sentLen":"the length of sentence",\
-                "spanDen":"span density in a given sentence",\
-                "oovDen":"oov density in a given sentence",\
+dict_att2desc = {"eCon":"label consistency of entity", \
+                "tCon":"label consistency of token", \
+                "eFre":"entity frequency in training set", \
+                "tFre":"token frequency in training set",\
+                "eLen":"the length of entity", \
+                "sLen":"the length of sentence",\
+                "eDen":"entity density in a given sentence",\
+                "oDen":"oov density in a given sentence",\
                 "tag":"span-level label", \
                 "Model":"different types of models", \
                 "notemz": "dataset: ontonotes-mz",\

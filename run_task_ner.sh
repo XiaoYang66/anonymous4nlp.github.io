@@ -5,7 +5,7 @@ task_type="ner"
 path_data="./data/"
 
 # path of conf file
-path_aspect_conf="conf.ner-aspects"
+path_aspect_conf="conf.ner-attributes"
 
 # # Part1: Dataset Name
 # datasets[0]="conll03"

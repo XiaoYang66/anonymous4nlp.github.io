@@ -211,8 +211,8 @@ def getAspectValue(test_word_sequences, test_trueTag_sequences, test_word_sequen
 
 	def getSententialValue(test_trueTag_sequences_sent, test_word_sequences_sent, dict_oov):
 
-		spanDen = []
-		oovDen = []
+		eDen = []
+		oDen = []
 		sentLen = []
 
 		for i, test_sent in enumerate(test_trueTag_sequences_sent):
@@ -225,19 +225,19 @@ def getAspectValue(test_word_sequences, test_trueTag_sequences, test_word_sequen
 				num_entityToken += idx_end - idx_start
 
 			# introduce the entity token density in sentence ...
-			spanDen.append(float(num_entityToken) / len(test_sent))
+			eDen.append(float(num_entityToken) / len(test_sent))
 
 			# introduce the oov density in sentence ...
 			num_oov = 0
 			for word in test_word_sequences_sent[i]:
 				if word not in dict_oov:
 					num_oov += 1
-			oovDen.append(float(num_oov) / len(test_sent))
+			oDen.append(float(num_oov) / len(test_sent))
 
 			# introduce the sentence length in sentence ...
 			sentLen.append(len(test_sent))
 
-		return spanDen, oovDen, sentLen
+		return eDen, oDen, sentLen
 
 
 
@@ -258,11 +258,11 @@ def getAspectValue(test_word_sequences, test_trueTag_sequences, test_word_sequen
 	for aspect, fun in dict_aspect_func.items():
 		dict_span2aspectVal[aspect] = {}
 
-	spanDen_list, oovDen_list, sentLen_list = [], [], []
-	if "oovDen" in dict_aspect_func.keys():
-		spanDen_list, oovDen_list, sentLen_list = getSententialValue(test_trueTag_sequences_sent,
+	eDen_list, oDen_list, sentLen_list = [], [], []
+	if "oDen" in dict_aspect_func.keys():
+		eDen_list, oDen_list, sentLen_list = getSententialValue(test_trueTag_sequences_sent,
 																	 test_word_sequences_sent,
-																	 dict_preComputed_model["oovDen"])
+																	 dict_preComputed_model["oDen"])
 
 
 	dict_pos2sid = getPos2SentId(test_word_sequences_sent)
@@ -288,7 +288,7 @@ def getAspectValue(test_word_sequences, test_trueTag_sequences, test_word_sequen
 
 		# Span-level Ambiguity: tamb_span
 
-		aspect = "spanAmb"
+		aspect = "eCon"
 		if aspect in dict_aspect_func.keys():
 			preCompute_ambSpan = dict_preComputed_model[aspect]
 			span_amb_value = 0.0
@@ -299,7 +299,7 @@ def getAspectValue(test_word_sequences, test_trueTag_sequences, test_word_sequen
 
 
 		# Token-level Ambiguity: tamb_token
-		aspect = "tokAmb"
+		aspect = "tCon"
 		if aspect in dict_aspect_func.keys():
 			preCompute_ambToken = dict_preComputed_model[aspect]
 			token_amb_value = 0.0
@@ -311,7 +311,7 @@ def getAspectValue(test_word_sequences, test_trueTag_sequences, test_word_sequen
 
 
 		# Span-level Frequency: fre_span
-		aspect = "spanFre"
+		aspect = "eFre"
 		if aspect in dict_aspect_func.keys():
 			preCompute_freqSpan = dict_preComputed_model[aspect]
 			span_fre_value = 0.0
@@ -321,7 +321,7 @@ def getAspectValue(test_word_sequences, test_trueTag_sequences, test_word_sequen
 
 
 		# Token-level Frequency: fre_token
-		aspect = "tokFre"
+		aspect = "tFre"
 		if aspect in dict_aspect_func.keys():
 			preCompute_freqToken = dict_preComputed_model[aspect]
 			token_fre_value = 0.0
@@ -332,25 +332,25 @@ def getAspectValue(test_word_sequences, test_trueTag_sequences, test_word_sequen
 
 
 
-		# Entity Length: spanLen
-		aspect = "spanLen"
+		# Entity Length: eLen
+		aspect = "eLen"
 		if aspect in dict_aspect_func.keys():
 			dict_span2aspectVal[aspect][span_pos] = span_length
 
 		# Sentence Length: sentLen
-		aspect = "sentLen"
+		aspect = "sLen"
 		if aspect in dict_aspect_func.keys():
 			dict_span2aspectVal[aspect][span_pos] = float(sentLen_list[span_sentid])
 
-		# Entity Density: spanDen
-		aspect = "spanDen"
+		# Entity Density: eDen
+		aspect = "eDen"
 		if aspect in dict_aspect_func.keys():
-			dict_span2aspectVal[aspect][span_pos] = float(spanDen_list[span_sentid])
+			dict_span2aspectVal[aspect][span_pos] = float(eDen_list[span_sentid])
 
-		# OOV Density: oovDen
-		aspect = "oovDen"
+		# OOV Density: oDen
+		aspect = "oDen"
 		if aspect in dict_aspect_func.keys():
-			dict_span2aspectVal[aspect][span_pos] = float(oovDen_list[span_sentid])
+			dict_span2aspectVal[aspect][span_pos] = float(oDen_list[span_sentid])
 
 		# Tag: tag
 		aspect = "tag"
@@ -518,22 +518,22 @@ def getAspectValue_atc(sample_list_sent, sample_list_word, sample_list_span, sam
 
 
 	dict_preComputed_model = {}
-	oovDen_list, sentLen_list = [], []
+	oDen_list, sentLen_list = [], []
 
 	for aspect, path in dict_preComputed_path.items():
 		print("path:\t"+path)
 		if os.path.exists(path):
 			print('load the hard dictionary of entity span in test set...')
 
-			if aspect == "tokAmb":
+			if aspect == "tCon":
 				fread = open(path, 'rb')
-				dict_preComputed_model["tokAmb"], dict_preComputed_model["tokFre"] = pickle.load(fread)
-			if aspect == "spanAmb":
+				dict_preComputed_model["tCon"], dict_preComputed_model["tFre"] = pickle.load(fread)
+			if aspect == "eCon":
 				fread = open(path, 'rb')
-				dict_preComputed_model["spanAmb"], dict_preComputed_model["spanFre"] = pickle.load(fread)
-			if aspect == "oovDen":
+				dict_preComputed_model["eCon"], dict_preComputed_model["eFre"] = pickle.load(fread)
+			if aspect == "oDen":
 				fread = open(path, 'rb')
-				_, oovDen_list, sentLen_list = pickle.load(fread)
+				_, oDen_list, sentLen_list = pickle.load(fread)
 
 		else:
 			raise ValueError("can not load hard dictionary" + aspect + "\t" + path)
@@ -572,8 +572,8 @@ def getAspectValue_atc(sample_list_sent, sample_list_word, sample_list_span, sam
 
 
 
-		# span-length: spanLen
-		aspect = "spanLen"
+		# span-length: eLen
+		aspect = "eLen"
 		if aspect in dict_aspect_func.keys():
 			dict_span2aspectVal[aspect][span_pos] = span_length
 
@@ -714,22 +714,22 @@ def getAspectValue_tc(sample_list_sent, sample_list_word, sample_list_span, samp
 
 
 	dict_preComputed_model = {}
-	oovDen_list, sentLen_list = [], []
+	oDen_list, sentLen_list = [], []
 
 	for aspect, path in dict_preComputed_path.items():
 		print("path:\t"+path)
 		if os.path.exists(path):
 			print('load the hard dictionary of entity span in test set...')
 
-			if aspect == "tokAmb":
+			if aspect == "tCon":
 				fread = open(path, 'rb')
-				dict_preComputed_model["tokAmb"], dict_preComputed_model["tokFre"] = pickle.load(fread)
-			if aspect == "spanAmb":
+				dict_preComputed_model["tCon"], dict_preComputed_model["tFre"] = pickle.load(fread)
+			if aspect == "eCon":
 				fread = open(path, 'rb')
-				dict_preComputed_model["spanAmb"], dict_preComputed_model["spanFre"] = pickle.load(fread)
-			if aspect == "oovDen":
+				dict_preComputed_model["eCon"], dict_preComputed_model["eFre"] = pickle.load(fread)
+			if aspect == "oDen":
 				fread = open(path, 'rb')
-				_, oovDen_list, sentLen_list = pickle.load(fread)
+				_, oDen_list, sentLen_list = pickle.load(fread)
 
 		else:
 			raise ValueError("can not load hard dictionary" + aspect + "\t" + path)
@@ -768,8 +768,8 @@ def getAspectValue_tc(sample_list_sent, sample_list_word, sample_list_span, samp
 
 
 
-		# # span-length: spanLen
-		# aspect = "spanLen"
+		# # span-length: eLen
+		# aspect = "eLen"
 		# if aspect in dict_aspect_func.keys():
 		# 	dict_span2aspectVal[aspect][span_pos] = span_length
 
@@ -868,22 +868,22 @@ def getAspectValue_re(sample_list_sent, sample_list_word, sample_list_span, samp
 
 
 	dict_preComputed_model = {}
-	oovDen_list, sentLen_list = [], []
+	oDen_list, sentLen_list = [], []
 
 	for aspect, path in dict_preComputed_path.items():
 		print("path:\t"+path)
 		if os.path.exists(path):
 			print('load the hard dictionary of entity span in test set...')
 
-			if aspect == "tokAmb":
+			if aspect == "tCon":
 				fread = open(path, 'rb')
-				dict_preComputed_model["tokAmb"], dict_preComputed_model["tokFre"] = pickle.load(fread)
-			if aspect == "spanAmb":
+				dict_preComputed_model["tCon"], dict_preComputed_model["tFre"] = pickle.load(fread)
+			if aspect == "eCon":
 				fread = open(path, 'rb')
-				dict_preComputed_model["spanAmb"], dict_preComputed_model["spanFre"] = pickle.load(fread)
-			if aspect == "oovDen":
+				dict_preComputed_model["eCon"], dict_preComputed_model["eFre"] = pickle.load(fread)
+			if aspect == "oDen":
 				fread = open(path, 'rb')
-				_, oovDen_list, sentLen_list = pickle.load(fread)
+				_, oDen_list, sentLen_list = pickle.load(fread)
 
 		else:
 			raise ValueError("can not load hard dictionary" + aspect + "\t" + path)
@@ -931,8 +931,8 @@ def getAspectValue_re(sample_list_sent, sample_list_word, sample_list_span, samp
 
 
 
-		# span-length: spanLen
-		aspect = "spanLen"
+		# span-length: eLen
+		aspect = "eLen"
 		if aspect in dict_aspect_func.keys():
 			dict_span2aspectVal[aspect][span1_pos] = span1_length
 			dict_span2aspectVal[aspect][span2_pos] = span2_length
@@ -1076,22 +1076,22 @@ def getAspectValue_match(sample_list_sent1, sample_list_sent2, sample_list_word1
 
 
 	dict_preComputed_model = {}
-	oovDen_list, sentLen_list = [], []
+	oDen_list, sentLen_list = [], []
 
 	for aspect, path in dict_preComputed_path.items():
 		print("path:\t"+path)
 		if os.path.exists(path):
 			print('load the hard dictionary of entity span in test set...')
 
-			if aspect == "tokAmb":
+			if aspect == "tCon":
 				fread = open(path, 'rb')
-				dict_preComputed_model["tokAmb"], dict_preComputed_model["tokFre"] = pickle.load(fread)
-			if aspect == "spanAmb":
+				dict_preComputed_model["tCon"], dict_preComputed_model["tFre"] = pickle.load(fread)
+			if aspect == "eCon":
 				fread = open(path, 'rb')
-				dict_preComputed_model["spanAmb"], dict_preComputed_model["spanFre"] = pickle.load(fread)
-			if aspect == "oovDen":
+				dict_preComputed_model["eCon"], dict_preComputed_model["eFre"] = pickle.load(fread)
+			if aspect == "oDen":
 				fread = open(path, 'rb')
-				_, oovDen_list, sentLen_list = pickle.load(fread)
+				_, oDen_list, sentLen_list = pickle.load(fread)
 
 		else:
 			raise ValueError("can not load hard dictionary" + aspect + "\t" + path)
@@ -1243,22 +1243,22 @@ def getAspectValue_cws(test_word_sequences, test_trueTag_sequences, test_word_se
 
 
 	dict_preComputed_model = {}
-	oovDen_list, sentLen_list = [], []
+	oDen_list, sentLen_list = [], []
 
 	for aspect, path in dict_preComputed_path.items():
 		print("path:\t"+path)
 		if os.path.exists(path):
 			print('load the hard dictionary of entity span in test set...')
 
-			if aspect == "tokAmb":
+			if aspect == "tCon":
 				fread = open(path, 'rb')
-				dict_preComputed_model["tokAmb"], dict_preComputed_model["tokFre"] = pickle.load(fread)
-			if aspect == "spanAmb":
+				dict_preComputed_model["tCon"], dict_preComputed_model["tFre"] = pickle.load(fread)
+			if aspect == "eCon":
 				fread = open(path, 'rb')
-				dict_preComputed_model["spanAmb"], dict_preComputed_model["spanFre"] = pickle.load(fread)
-			if aspect == "oovDen":
+				dict_preComputed_model["eCon"], dict_preComputed_model["eFre"] = pickle.load(fread)
+			if aspect == "oDen":
 				fread = open(path, 'rb')
-				_, oovDen_list, sentLen_list = pickle.load(fread)
+				_, oDen_list, sentLen_list = pickle.load(fread)
 
 		else:
 			raise ValueError("can not load hard dictionary" + aspect + "\t" + path)
@@ -1296,7 +1296,7 @@ def getAspectValue_cws(test_word_sequences, test_trueTag_sequences, test_word_se
 
 		# Span-level Ambiguity: tamb_span
 
-		aspect = "spanAmb"
+		aspect = "eCon"
 		if aspect in dict_aspect_func.keys():
 			preCompute_ambSpan = dict_preComputed_model[aspect]
 			span_amb_value = 0.0
@@ -1307,7 +1307,7 @@ def getAspectValue_cws(test_word_sequences, test_trueTag_sequences, test_word_se
 
 
 		# Token-level Ambiguity: tamb_token
-		aspect = "tokAmb"
+		aspect = "tCon"
 		if aspect in dict_aspect_func.keys():
 			preCompute_ambToken = dict_preComputed_model[aspect]
 			token_amb_value = 0.0
@@ -1319,7 +1319,7 @@ def getAspectValue_cws(test_word_sequences, test_trueTag_sequences, test_word_se
 
 
 		# Span-level Frequency: fre_span
-		aspect = "spanFre"
+		aspect = "eFre"
 		if aspect in dict_aspect_func.keys():
 			preCompute_freqSpan = dict_preComputed_model[aspect]
 			span_fre_value = 0.0
@@ -1329,7 +1329,7 @@ def getAspectValue_cws(test_word_sequences, test_trueTag_sequences, test_word_se
 
 
 		# Token-level Frequency: fre_token
-		aspect = "tokFre"
+		aspect = "tFre"
 		if aspect in dict_aspect_func.keys():
 			preCompute_freqToken = dict_preComputed_model[aspect]
 			token_fre_value = 0.0
@@ -1340,28 +1340,28 @@ def getAspectValue_cws(test_word_sequences, test_trueTag_sequences, test_word_se
 
 
 
-		# Entity Length: spanLen
-		aspect = "spanLen"
+		# Entity Length: eLen
+		aspect = "eLen"
 		if aspect in dict_aspect_func.keys():
-			dict_span2aspectVal["spanLen"][span_pos] = span_length
+			dict_span2aspectVal["eLen"][span_pos] = span_length
 
 
 
 		# Sentence Length: sentLen
-		aspect = "sentLen"
+		aspect = "sLen"
 		if aspect in dict_aspect_func.keys():
-			dict_span2aspectVal["sentLen"][span_pos] = float(sentLen_list[span_sentid])
+			dict_span2aspectVal["sLen"][span_pos] = float(sentLen_list[span_sentid])
 
 
-		# Entity Density: spanDen
-		aspect = "spanDen"
+		# Entity Density: eDen
+		aspect = "eDen"
 		if aspect in dict_aspect_func.keys():
-			dict_span2aspectVal["spanDen"][span_pos] = float(spanDen_list[span_sentid])
+			dict_span2aspectVal["eDen"][span_pos] = float(eDen_list[span_sentid])
 
-		# OOV Density: oovDen
-		aspect = "oovDen"
+		# OOV Density: oDen
+		aspect = "oDen"
 		if aspect in dict_aspect_func.keys():
-			dict_span2aspectVal["oovDen"][span_pos] = float(oovDen_list[span_sentid])
+			dict_span2aspectVal["oDen"][span_pos] = float(oDen_list[span_sentid])
 
 		# Tag: tag
 		aspect = "tag"
@@ -2162,14 +2162,14 @@ if __name__ == '__main__':
 		dict_task2newMetric["tc"] = "new_metric_tc"
 		dict_task2newMetric["match"] = "new_metric_match"
 		# Task-dependent formats for training and test results files.
-		delimiter = ""
+		delimiter = " "
 		column_info = [-1, -2, -1]
 
 
 		if task_type+"_"+ corpus_type in set(["ner_conll03", "ner_wnut16", "pos_ptb2", "chunk_conll00"]):
 			column_info = [-1, -2, -1] # [x, y, z] : column_true_tag_train, column_true_tag_test, column_pred_tag_test
 			delimiter = " "
-		elif task_type+"_"+ corpus_type in set(['notebn', 'notebc','notewb','notemz','notenw','notetc']):
+		elif task_type+"_"+ corpus_type in set(['ner_notebn', 'ner_notebc','ner_notewb','ner_notemz','ner_notenw','ner_notetc']):
 			column_info = [3, -2, -1]
 			delimiter = " "
 
@@ -2205,13 +2205,13 @@ if __name__ == '__main__':
 
 
 		tokenDen_f1 =[]
-		oovDen_f1 =[]
+		oDen_f1 =[]
 		sentProb_f1 =[]
 		sentLen_f1 = []
 		entityLen_f1 =[]
 		rhoSpan_f1 =[]
 		label_f1 =[]
-		spanFreq_f1 =[]
+		eFreq_f1 =[]
 		phoToken_acc =[]
 		morpho_acc =[]
 		pos_acc =[]
