@@ -27,14 +27,26 @@ Run run_task_ner.sh: ./run_task_ner.sh, and it will generate the html file which
 ## The analysis results
 The analysis results contain five aspects, as follows we give the analysis results of LSTM-system & CNN-system.
 1) Holistic Result
+https://github.com/anonymous4nlp/anonymous4nlp.github.io/blob/master/img/1holistic-result.png
 
 2) Break-down Performance
 
+LSTM: https://github.com/anonymous4nlp/anonymous4nlp.github.io/blob/master/img/2breakdown-lstm.png
+
+CNN: https://github.com/anonymous4nlp/anonymous4nlp.github.io/blob/master/img/2breakdown-cnn.png
+
 3) Self-diagnosis
+
+https://github.com/anonymous4nlp/anonymous4nlp.github.io/blob/master/img/3selfdiag-lstmcnn.png
 
 4) Aided-diagnosis
 
+https://github.com/anonymous4nlp/anonymous4nlp.github.io/blob/master/img/4compdiag-lstmcnn.png
+
 5) Heatmap
+
+https://github.com/anonymous4nlp/anonymous4nlp.github.io/blob/master/img/5heatmap.png
+
 
 ## Diagnosis your own model.
 Put the result-file of your model on this path: preComputed/ner/result/. In order to carry out model diagnosis, two or more model result files must be included. You can also choose one of the result files provided by us as the reference model.
