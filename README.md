@@ -9,7 +9,11 @@ The datasets utilized in our paper including:
 
 #### CoNLL-2003 (in this repository.)
 #### WNUT-2016 (in this repository.)
+<<<<<<< HEAD
+#### OntoNotes 5.0 (WB, MZ, BC, BN) (Yor can download from [LDC](https://catalog.ldc.upenn.edu/LDC2013T19) )
+=======
 #### OntoNotes 5.0 [WB, MZ, BC, BN](https://catalog.ldc.upenn.edu/LDC2013T19)
+>>>>>>> 77e948cb9951aa14404961c53353d9a5362a3a63
 
 
 ## Requirements
@@ -23,6 +27,17 @@ The datasets utilized in our paper including:
 
 `./run_task_ner.sh`
 
+<<<<<<< HEAD
+The shell scripts include the following three aspects:
+
+- `tensorEvaluation-ner.py` -> Calculate the dependent results of fine-grained analysis.
+
+- `genFig.py` -> Drawing figures to show the results of the fine-grained analysis, including histograms and heat maps.
+
+- `genHtml.py` -> Put the figures drawing in the previous step into the web page.
+
+=======
+>>>>>>> 77e948cb9951aa14404961c53353d9a5362a3a63
 After running the above command, a web page named "tEval-ner.html" will be generated for displaying the analysis and diagnosis results of the models. You can check the results from this link: https://anonymous4nlp.github.io/analysis/tEval-ner.html
 
 
