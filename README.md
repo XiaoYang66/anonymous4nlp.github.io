@@ -91,19 +91,33 @@ Put the result-file of your model on this path: `preComputed/ner/result/`. In or
 - **The result file must include three columns of words, true-tags, and predicted-tags, separated by space.** If your result file is not in the required format, you can modify the function `read_data()` in file `tensorEvaluation-ner.py` to adaptive to your format. 
 
 Here, we give an example of result file format as follow:
+
 **word** **true-tag** **predicted-tag**  (separated by space)
+
 SOCCER     O              O
+
 - O O
+
 JAPAN     B-LOC          B-LOC
+
 GET        O              O
+
 LUCKY      O              O
+
 WIN        O              O
+
 ,          O              O
+
 CHINA     B-PER          B-LOC
+
 IN         O              O
+
 SURPRISE   O              O
+
 DEFEAT     O              O
+
 .          O              O
 
-your result file must be stored in accordance with the following requirements. The result file has a total of three columns, from the first column to the last column are the words, the true-tags, the tag predicted by the model.
+
+
 
