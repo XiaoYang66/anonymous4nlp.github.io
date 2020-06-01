@@ -7,9 +7,9 @@ The implementation of TensorEvaluation for NER in our paper:
 
 The datasets utilized in our paper including:
 
-#### CoNLL-2003 (in this repository.)
-#### WNUT-2016 (in this repository.)
-#### OntoNotes 5.0 (WB, MZ, BC, BN) (Yor can download from [LDC](https://catalog.ldc.upenn.edu/LDC2013T19) )
+- CoNLL-2003 (in this repository.)
+- WNUT-2016 (in this repository.)
+- OntoNotes 5.0 (WB, MZ, BC, BN) (Yor can download from [LDC](https://catalog.ldc.upenn.edu/LDC2013T19) )
 
 
 ## Requirements
@@ -27,7 +27,7 @@ The shell scripts include the following three aspects:
 
 - `tensorEvaluation-ner.py` -> Calculate the dependent results of fine-grained analysis.
 
-- `genFig.py` -> Drawing figures to show the results of the fine-grained analysis, including histograms and heat maps.
+- `genFig.py` -> Drawing figures to show the results of the fine-grained analysis.
 
 - `genHtml.py` -> Put the figures drawing in the previous step into the web page.
 
@@ -35,44 +35,39 @@ After running the above command, a web page named "tEval-ner.html" will be gener
 
 
 ## Results
-We provide analysis and diagnosis of model architectures and pre-trained knowledge on six data sets, and the results are shown on the following web pages.
+We provide analysis and diagnosis of model architectures and pre-trained knowledge on **six** data sets, and the results are shown on the following web pages.
 
-CRF-MLP: https://anonymous4nlp.github.io/analysis/tEval-ner-6datas-crf_mlp.html
+- **CRF-MLP**: https://anonymous4nlp.github.io/analysis/tEval-ner-6datas-crf_mlp.html
 
-LSTM-CNN: https://anonymous4nlp.github.io/analysis/tEval-ner-6datas-lstm_cnn.html
+- **LSTM-CNN**: https://anonymous4nlp.github.io/analysis/tEval-ner-6datas-lstm_cnn.html
 
-BERT-ELMo: https://anonymous4nlp.github.io/analysis/tEval-ner-6datas-bert_elmo.html
+- **BERT-ELMo**: https://anonymous4nlp.github.io/analysis/tEval-ner-6datas-bert_elmo.html
 
-Flair-ELMo: https://anonymous4nlp.github.io/analysis/tEval-ner-6datas-flair_elmo.html
+- **Flair-ELMo**: https://anonymous4nlp.github.io/analysis/tEval-ner-6datas-flair_elmo.html
 
-LSTM-CNN: https://anonymous4nlp.github.io/analysis/tEval-ner-conll03-lstm_cnn.html
+- **LSTM-CNN for CoNLL-2003**: https://anonymous4nlp.github.io/analysis/tEval-ner-conll03-lstm_cnn.html
 
 
 ## The analysis results
 
-We provide five aspects of the analysis and diagnostic model results.
+Our model analysis and diagnosis includes **five** aspects: 
+- Holistic Results; 
+- Break-down Performance; 
+- Self-diagnosis; 
+- Aided-diagnosis; 
+- Heatmap. 
+Following, we give an example of the **LSTM- and CNN-system pair** analysis and diagnosis on **six** datasets.
 
-The analysis and diagnosis contains five aspects, as follows we give the analysis results of LSTM-system & CNN-system.
-1) Holistic Result
-<<<<<<< HEAD
-=======
+1) Holistic Results
 
->>>>>>> c7363b0c2ece05594cbc0bfe0349a974403a7ca1
 ![show fig](https://github.com/anonymous4nlp/anonymous4nlp.github.io/raw/master/img/1holistic-result.png)
 
 2) Break-down Performance
 
-<<<<<<< HEAD
-LSTM: !(https://github.com/anonymous4nlp/anonymous4nlp.github.io/raw/master/img/2breakdown-lstm.png)
+LSTM: ![show fig](https://github.com/anonymous4nlp/anonymous4nlp.github.io/raw/master/img/2breakdown-lstm.png)
 
 CNN: ![show fig](https://github.com/anonymous4nlp/anonymous4nlp.github.io/raw/master/img/2breakdown-cnn.png)
-=======
-LSTM: 
-![show fig](https://github.com/anonymous4nlp/anonymous4nlp.github.io/raw/master/img/2breakdown-lstm.png)
 
-CNN: 
-![show fig](https://github.com/anonymous4nlp/anonymous4nlp.github.io/raw/master/img/2breakdown-cnn.png)
->>>>>>> c7363b0c2ece05594cbc0bfe0349a974403a7ca1
 
 3) Self-diagnosis
 
@@ -88,7 +83,17 @@ CNN:
 
 
 ## Analysis and diagnosis your own model.
-Put the result-file of your model on this path: preComputed/ner/result/. In order to carry out model diagnosis, two or more model result files must be included. You can also choose one of the result files provided by us as the reference model.
 
-Note: your result file must be stored in accordance with the following requirements. The result file has a total of three columns, from the first column to the last column are the words, the true-tags, the tag predicted by the model.
+Put the result-file of your model on this path: `preComputed/ner/result/`. In order to carry out model diagnosis, two or more model result files must be included. You can also choose one of the result files provided by us as the reference model.
+
+### Note: 
+- **More than two result files are required.**  Because comparative-diagnosis is to compare the strengths and weaknesses of the model architectures and pre-trained knowledge between two or more models, it is necessary to input as least two model results. 
+
+- **The result file must include three columns of words, true-tags, and predicted-tags, separated by space.** If your result file is not in the required format, you can modify the function `read_data()` in file `tensorEvaluation-ner.py` to adaptive to your format. 
+
+Here, we give an example of result file format as follow:
+!(http)
+
+
+
 
