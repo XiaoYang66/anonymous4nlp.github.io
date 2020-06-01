@@ -53,8 +53,6 @@ We provide analysis and diagnosis of model architectures and pre-trained knowled
 
 - **Flair-ELMo**: https://anonymous4nlp.github.io/analysis/tEval-ner-6datas-flair_elmo.html
 
-- **LSTM-CNN for CoNLL-2003**: https://anonymous4nlp.github.io/analysis/tEval-ner-conll03-lstm_cnn.html
-
 
 ## The analysis results
 
