@@ -3,52 +3,71 @@ The implementation of TensorEvaluation for NER in our paper:
 
 "Interpretable Multi-dataset Evaluation for Named Entity Recognition"
 
+## Datasets
 
-## Require
-Python 3.6
+The datasets utilized in our paper including:
 
-texlive 
-
-## Existing Compare Models 
-6datas, CRF-MLP: https://anonymous4nlp.github.io/analysis/tEval-ner-6datas-crf_mlp.html
-
-6datas, LSTM-CNN: https://anonymous4nlp.github.io/analysis/tEval-ner-6datas-lstm_cnn.html
-
-6datas, BERT-ELMo: https://anonymous4nlp.github.io/analysis/tEval-ner-6datas-bert_elmo.html
-
-6datas, Flair-ELMo: https://anonymous4nlp.github.io/analysis/tEval-ner-6datas-flair_elmo.html
-
-conll03, LSTM-CNN: https://anonymous4nlp.github.io/analysis/tEval-ner-conll03-lstm_cnn.html
+#### CoNLL-2003 (in this repository.)
+#### WNUT-2016 (in this repository.)
+#### OntoNotes 5.0 [WB, MZ, BC, BN](https://catalog.ldc.upenn.edu/LDC2013T19)
 
 
-## Reproducing Results
-Run run_task_ner.sh: ./run_task_ner.sh, and it will generate the html file which is utilized to show the analysis result. 
+## Requirements
+
+-  `python3`
+-  `texlive`
+- `pip3 install -r requirements.txt`
+
+ 
+## Run
+
+`./run_task_ner.sh`
+
+After running the above command, a web page named "tEval-ner.html" will be generated for displaying the analysis and diagnosis results of the models. You can check the results from this link: https://anonymous4nlp.github.io/analysis/tEval-ner.html
+
+
+## Results
+We provide analysis and diagnosis of model architectures and pre-trained knowledge on six data sets, and the results are shown on the following web pages.
+
+CRF-MLP: https://anonymous4nlp.github.io/analysis/tEval-ner-6datas-crf_mlp.html
+
+LSTM-CNN: https://anonymous4nlp.github.io/analysis/tEval-ner-6datas-lstm_cnn.html
+
+BERT-ELMo: https://anonymous4nlp.github.io/analysis/tEval-ner-6datas-bert_elmo.html
+
+Flair-ELMo: https://anonymous4nlp.github.io/analysis/tEval-ner-6datas-flair_elmo.html
+
+LSTM-CNN: https://anonymous4nlp.github.io/analysis/tEval-ner-conll03-lstm_cnn.html
+
 
 ## The analysis results
-The analysis results contain five aspects, as follows we give the analysis results of LSTM-system & CNN-system.
+
+We provide five aspects of the analysis and diagnostic model results.
+
+The analysis and diagnosis contains five aspects, as follows we give the analysis results of LSTM-system & CNN-system.
 1) Holistic Result
-(https://github.com/anonymous4nlp/anonymous4nlp.github.io/raw/master/img/1holistic-result.png)
+![show fig](https://github.com/anonymous4nlp/anonymous4nlp.github.io/raw/master/img/1holistic-result.png)
 
 2) Break-down Performance
 
-LSTM: (https://github.com/anonymous4nlp/anonymous4nlp.github.io/raw/master/img/2breakdown-lstm.png)
+LSTM: !(https://github.com/anonymous4nlp/anonymous4nlp.github.io/raw/master/img/2breakdown-lstm.png)
 
-CNN: (https://github.com/anonymous4nlp/anonymous4nlp.github.io/raw/master/img/2breakdown-cnn.png)
+CNN: ![show fig](https://github.com/anonymous4nlp/anonymous4nlp.github.io/raw/master/img/2breakdown-cnn.png)
 
 3) Self-diagnosis
 
-(https://github.com/anonymous4nlp/anonymous4nlp.github.io/raw/master/img/3selfdiag-lstmcnn.png)
+![show fig](https://github.com/anonymous4nlp/anonymous4nlp.github.io/raw/master/img/3selfdiag-lstmcnn.png)
 
 4) Aided-diagnosis
 
-(https://github.com/anonymous4nlp/anonymous4nlp.github.io/raw/master/img/4compdiag-lstmcnn.png)
+![show fig](https://github.com/anonymous4nlp/anonymous4nlp.github.io/raw/master/img/4compdiag-lstmcnn.png)
 
 5) Heatmap
 
-(https://github.com/anonymous4nlp/anonymous4nlp.github.io/raw/master/img/5heatmap.png)
+![show fig](https://github.com/anonymous4nlp/anonymous4nlp.github.io/raw/master/img/5heatmap.png)
 
 
-## Diagnosis your own model.
+## Analysis and diagnosis your own model.
 Put the result-file of your model on this path: preComputed/ner/result/. In order to carry out model diagnosis, two or more model result files must be included. You can also choose one of the result files provided by us as the reference model.
 
 Note: your result file must be stored in accordance with the following requirements. The result file has a total of three columns, from the first column to the last column are the words, the true-tags, the tag predicted by the model.
