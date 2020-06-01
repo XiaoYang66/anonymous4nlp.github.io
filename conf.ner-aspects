@@ -1,0 +1,53 @@
+# Span-level Label ambiguity
+notation:	spanAmb
+type:	bucketAttribute_SpecifiedBucketInterval
+setting:	[(0,), (0,0.5), (0.5,0.999), (1,)]
+is_preComputed:	Yes
+
+# Token-level Label ambiguity
+notation:	tokAmb
+type:	bucketAttribute_SpecifiedBucketInterval
+setting:	[(0,), (0,0.5), (0.5,0.999), (1,)]
+is_preComputed:	Yes
+
+# Span-level Frequency
+notation:	spanFre
+type:	bucketAttribute_SpecifiedBucketValue
+setting:	4	[0,]
+is_preComputed:	Yes
+
+# Token-level Frequency
+notation:	tokFre
+type:	bucketAttribute_SpecifiedBucketValue
+setting:	4	[0,]
+is_preComputed:	Yes
+
+# Span (Entity) Length
+notation:	spanLen
+type:	bucketAttribute_SpecifiedBucketValue
+setting:	4	[1,2,3]
+is_preComputed:	No
+
+# Sentence Length
+notation:	sentLen
+type:	bucketAttribute_SpecifiedBucketValue
+setting:	4	[]
+is_preComputed:	No
+
+# Entity Density
+notation:	spanDen
+type:	bucketAttribute_SpecifiedBucketValue
+setting:	4	[]
+is_preComputed:	No
+
+# OOV Density
+notation:	oovDen
+type:	bucketAttribute_SpecifiedBucketValue
+setting:	4	[0]
+is_preComputed:	Yes
+
+# Tag
+notation:	tag
+type:	bucketAttribute_DiscreteValue
+setting:	6	1
+is_preComputed:	No
