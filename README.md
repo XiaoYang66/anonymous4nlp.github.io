@@ -27,17 +27,19 @@ Run run_task_ner.sh: ./run_task_ner.sh, and it will generate the html file which
 ## The analysis results
 The analysis results contain five aspects, as follows we give the analysis results of LSTM-system & CNN-system.
 1) Holistic Result
-(https://github.com/anonymous4nlp/anonymous4nlp.github.io/raw/master/img/1holistic-result.png)
+![show fig](https://github.com/anonymous4nlp/anonymous4nlp.github.io/raw/master/img/1holistic-result.png)
 
 2) Break-down Performance
 
-LSTM: (https://github.com/anonymous4nlp/anonymous4nlp.github.io/raw/master/img/2breakdown-lstm.png)
+LSTM: 
+![show fig](https://github.com/anonymous4nlp/anonymous4nlp.github.io/raw/master/img/2breakdown-lstm.png)
 
-CNN: (https://github.com/anonymous4nlp/anonymous4nlp.github.io/raw/master/img/2breakdown-cnn.png)
+CNN: 
+![show fig](https://github.com/anonymous4nlp/anonymous4nlp.github.io/raw/master/img/2breakdown-cnn.png)
 
 3) Self-diagnosis
 
-(https://github.com/anonymous4nlp/anonymous4nlp.github.io/raw/master/img/3selfdiag-lstmcnn.png)
+![show fig](https://github.com/anonymous4nlp/anonymous4nlp.github.io/raw/master/img/3selfdiag-lstmcnn.png)
 
 4) Aided-diagnosis
 
@@ -45,7 +47,7 @@ CNN: (https://github.com/anonymous4nlp/anonymous4nlp.github.io/raw/master/img/2b
 
 5) Heatmap
 
-(https://github.com/anonymous4nlp/anonymous4nlp.github.io/raw/master/img/5heatmap.png)
+![show fig](https://github.com/anonymous4nlp/anonymous4nlp.github.io/raw/master/img/5heatmap.png)
 
 
 ## Diagnosis your own model.
