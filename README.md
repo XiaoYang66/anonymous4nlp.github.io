@@ -41,7 +41,7 @@ CNN: (https://github.com/anonymous4nlp/anonymous4nlp.github.io/raw/master/img/2b
 
 4) Aided-diagnosis
 
-[show fig](https://github.com/anonymous4nlp/anonymous4nlp.github.io/raw/master/img/4compdiag-lstmcnn.png)
+![show fig](https://github.com/anonymous4nlp/anonymous4nlp.github.io/raw/master/img/4compdiag-lstmcnn.png)
 
 5) Heatmap
 
