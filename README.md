@@ -45,12 +45,6 @@ The datasets utilized in our paper including:
 ## Results
 We provide analysis and diagnosis of model architectures and pre-trained knowledge on **six** data sets, and the results are shown on the following web pages.
 
-- **CRF-MLP**: https://anonymous4nlp.github.io/analysis/tEval-ner-6datas-crf_mlp.html
-
-- **LSTM-CNN**: https://anonymous4nlp.github.io/analysis/tEval-ner-6datas-lstm_cnn.html
-
-- **BERT-ELMo**: https://anonymous4nlp.github.io/analysis/tEval-ner-6datas-bert_elmo.html
-
 - **Flair-ELMo**: https://anonymous4nlp.github.io/analysis/tEval-ner-6datas-flair_elmo.html
 
 
