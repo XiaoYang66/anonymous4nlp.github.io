@@ -10,7 +10,16 @@ Python 3.6
 texlive 
 
 ## Existing Compare Models 
+6datas, CRF-MLP: https://anonymous4nlp.github.io/analysis/tEval-ner-6datas-crf_mlp.html
+
+6datas, LSTM-CNN: https://anonymous4nlp.github.io/analysis/tEval-ner-6datas-lstm_cnn.html
+
+6datas, BERT-ELMo: https://anonymous4nlp.github.io/analysis/tEval-ner-6datas-bert_elmo.html
+
+6datas, Flair-ELMo: https://anonymous4nlp.github.io/analysis/tEval-ner-6datas-flair_elmo.html
+
 conll03, LSTM-CNN: https://anonymous4nlp.github.io/analysis/tEval-ner.html
+
 
 ## Reproducing Results
 Run run_task_ner.sh: ./run_task_ner.sh, and it will generate the html file which is utilized to show the analysis result. 
