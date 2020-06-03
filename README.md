@@ -56,31 +56,35 @@ Following, we give an example of the **BERT- and ELMo-system pair** analysis and
 1) Holistic Results
 
 <!-- ![show fig](https://github.com/anonymous4nlp/anonymous4nlp.github.io/raw/master/img/1holistic-result.png) -->
-<img src="https://github.com/anonymous4nlp/anonymous4nlp.github.io/raw/master/img/1holistic-result.png" width="300">
+<img src="https://github.com/anonymous4nlp/anonymous4nlp.github.io/raw/master/img/1holistic-result.png" width="400">
 
 2) Break-down Performance
 
-Flair: <img src="https://github.com/anonymous4nlp/anonymous4nlp.github.io/raw/master/img/2breakdown-flair.png" width="600">
+Flair: 
+
+<img src="https://github.com/anonymous4nlp/anonymous4nlp.github.io/raw/master/img/2breakdown-flair.png" width="800">
 <!-- ![show fig](https://github.com/anonymous4nlp/anonymous4nlp.github.io/raw/master/img/2breakdown-flair.png) -->
 
-ELMo: <img src="https://github.com/anonymous4nlp/anonymous4nlp.github.io/raw/master/img/2breakdown-elmo.png" width="600">
+ELMo: 
+
+<img src="https://github.com/anonymous4nlp/anonymous4nlp.github.io/raw/master/img/2breakdown-elmo.png" width="800">
 
 <!-- ![show fig](https://github.com/anonymous4nlp/anonymous4nlp.github.io/raw/master/img/2breakdown-elmo.png) -->
 
 3) Self-diagnosis
 
-<img src="https://github.com/anonymous4nlp/anonymous4nlp.github.io/raw/master/img/3selfdiag-flairelmo.png" width="600">
+<img src="https://github.com/anonymous4nlp/anonymous4nlp.github.io/raw/master/img/3selfdiag-flairelmo.png" width="800">
 
 <!-- ![show fig](https://github.com/anonymous4nlp/anonymous4nlp.github.io/raw/master/img/3selfdiag-flairelmo.png) -->
 
 4) Aided-diagnosis
 
-<img src="https://github.com/anonymous4nlp/anonymous4nlp.github.io/raw/master/img/4compdiag-flairelmo.png" width="600">
+<img src="https://github.com/anonymous4nlp/anonymous4nlp.github.io/raw/master/img/4compdiag-flairelmo.png" width="800">
 <!-- ![show fig](https://github.com/anonymous4nlp/anonymous4nlp.github.io/raw/master/img/4compdiag-flairelmo.png) -->
 
 5) Heatmap
 
-<img src="https://github.com/anonymous4nlp/anonymous4nlp.github.io/raw/master/img/5heatmap.png" width="600">
+<img src="https://github.com/anonymous4nlp/anonymous4nlp.github.io/raw/master/img/5heatmap.png" width="800">
 <!-- ![show fig](https://github.com/anonymous4nlp/anonymous4nlp.github.io/raw/master/img/5heatmap.png) -->
 
 You can also check the above example with the following web page:
