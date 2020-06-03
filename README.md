@@ -93,17 +93,18 @@ You can check the above example with the web page:
 ## Analysis and diagnosis your own model.
 
 1) Put the result-files of your models on this path: `preComputed/ner/result/`. 
-At least two result-files are required because the model diagnosis is based on comparing with two models. 
-if you have only one result-file for a model, you can choose one result-file of a specific model provided by us (on the path: `preComputed/ner/metric/result/`).
+At least two result-files are required because the comparative-diagnosis is based on comparing with two models. 
+If you have only one result-file for a model, you can choose one result-file of a specific model provided by us (on the path: `preComputed/ner/metric/result/`).
 
-2) Put the train-set which your result-file trained on the path: `./data/`. You need to set the column delimiter of your train-set and result-file in the `main()` function of `tensorEvaluation-ner.py`.
+2) Put the train-set which your result-file trained on the path: `./data/`. 
+<!-- You need to set the column delimiter of your train-set and result-file in the `main()` function of `tensorEvaluation-ner.py`. -->
 
 3) Set the `path_data` (path of training set), `datasets[-]` (dataset name), `model1` (the first model's name), `model2` (the second model's name), `resfiles[-]` (the paths of the results) in `run_task_ner.sh` according to your data.
 
 ### Note: 
-- **More than two result files are required.**  Because comparative-diagnosis is to compare the strengths and weaknesses of the model architectures and pre-trained knowledge between two or more models, it is necessary to input as least two model results. 
+- **At least two result-files are required.**  Comparative-diagnosis is utilized to compare the strengths and weaknesses of two models, so it is necessary to input as least two model results. 
 
-- **The result file must include three columns of words, true-tags, and predicted-tags, separated by space.** If your result file is not in the required format, you can modify the function `read_data()` in file `tensorEvaluation-ner.py` to adaptive to your format. 
+- **The result-file must contain three columns separated by spaces, the columns from left to right are words, true-tags, and predicted-tags.** If your result-file format does not meet the requirement, you can set the column delimiter of your result-file (or train-set file) in `tensorEvaluation-ner.py`.
 
 Here, we give an example of result file format as follow:
 
