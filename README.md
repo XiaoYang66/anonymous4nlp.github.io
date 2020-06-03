@@ -3,7 +3,7 @@ The implementation of interpretable evaluation for NER in our paper:
 
 "Interpretable Multi-dataset Evaluation for Named Entity Recognition"
 
-## Advantages of This Codes
+## Advantages of this codes
 * Our codes can automatically generate figures (with latex codes), web pages.
 * It is easy to delete or add attributes by simply modifying the `conf.ner-attributes`.
 * It is easy to change the bucketing strategy for a specific attribute by modifying the bucketing strategy defined in  `conf.ner-attributes`.
@@ -42,6 +42,8 @@ The datasets utilized in our paper including:
 - CoNLL-2003 (in this repository.)
 - WNUT-2016 (in this repository.)
 - OntoNotes 5.0 (You can download from [LDC](https://catalog.ldc.upenn.edu/LDC2013T19) ) 
+## Demo
+- **Flair-ELMo**: https://anonymous4nlp.github.io/analysis/tEval-ner-6datas-flair_elmo.html
 
 ## Results
 We provide analysis and diagnosis of model architectures and pre-trained knowledge on **six** data sets, and the fine-grained analysis includes **five** aspects: 
@@ -87,8 +89,6 @@ ELMo:
 <img src="https://github.com/anonymous4nlp/anonymous4nlp.github.io/raw/master/img/5heatmap.png" width="800">
 <!-- ![show fig](https://github.com/anonymous4nlp/anonymous4nlp.github.io/raw/master/img/5heatmap.png) -->
 
-You can check the above example with the web page:
-- **Flair-ELMo**: https://anonymous4nlp.github.io/analysis/tEval-ner-6datas-flair_elmo.html
 
 ## Analysis and diagnosis your own model.
 
