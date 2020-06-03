@@ -32,7 +32,8 @@ The shell scripts include the following three aspects:
 
 - `genHtml.py` -> Put the figures drawing in the previous step into the web page.
 
-After running the above command, a web page named "tEval-ner.html" will be generated for displaying the analysis and diagnosis results of the models. You can check the results from this link: https://anonymous4nlp.github.io/analysis/tEval-ner.html
+After running the above command, a web page named `tEval-ner.html` will be generated for displaying the analysis and diagnosis results of the models. 
+
 
 ## Datasets
 
