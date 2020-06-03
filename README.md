@@ -4,7 +4,7 @@ The implementation of interpretable evaluation for NER in our paper:
 "Interpretable Multi-dataset Evaluation for Named Entity Recognition"
 
 ## Advantages of This Codes
-* The process of generating analysis and diagnosis figures, the latex-sources (utilized to generate the figures), and the web page (used to display the results) are automatic.
+* Generate figures (with latex codes), web pages are automatic.
 * It is easy to delete or add attributes by simply modifying the `conf.ner-attributes`.
 * It is easy to change the bucketing method for a specific attribute by modifying the definition of the bucketing method in  `conf.ner-attributes`.
 * It is easy to extend this code for other sequence labeling tasks. Only a few parameters in the `run_task_ner.sh` need to be modified, such as `task_type` and  `path_attribute_conf`. (It may be necessary to add or delete attributes appropriately.)
@@ -44,20 +44,14 @@ The datasets utilized in our paper including:
 - OntoNotes 5.0 (WB, MZ, BC, BN) (Yor can download from [LDC](https://catalog.ldc.upenn.edu/LDC2013T19) )
 
 ## Results
-We provide analysis and diagnosis of model architectures and pre-trained knowledge on **six** data sets, and the results are shown on the following web pages.
-
-- **Flair-ELMo**: https://anonymous4nlp.github.io/analysis/tEval-ner-6datas-flair_elmo.html
-
-
-## The analysis results
-
-Our model analysis and diagnosis includes **five** aspects: 
+We provide analysis and diagnosis of model architectures and pre-trained knowledge on **six** data sets, including **five** aspects: 
 - Holistic Results; 
 - Break-down Performance; 
 - Self-diagnosis; 
 - Aided-diagnosis; 
 - Heatmap. 
-Following, we give an example of the **LSTM- and CNN-system pair** analysis and diagnosis on **six** datasets.
+
+Following, we give an example of the **BERT- and ELMo-system pair** analysis and diagnosis on **six** datasets.
 
 1) Holistic Results
 
@@ -82,6 +76,8 @@ ELMo: ![show fig](https://github.com/anonymous4nlp/anonymous4nlp.github.io/raw/m
 
 ![show fig](https://github.com/anonymous4nlp/anonymous4nlp.github.io/raw/master/img/5heatmap.png)
 
+You can also check the above example with the following web page:
+- **Flair-ELMo**: https://anonymous4nlp.github.io/analysis/tEval-ner-6datas-flair_elmo.html
 
 ## Analysis and diagnosis your own model.
 
