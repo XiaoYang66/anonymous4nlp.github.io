@@ -41,7 +41,7 @@ The datasets utilized in our paper including:
 
 - CoNLL-2003 (in this repository.)
 - WNUT-2016 (in this repository.)
-- OntoNotes 5.0 (Yor can download from [LDC](https://catalog.ldc.upenn.edu/LDC2013T19) ) 
+- OntoNotes 5.0 (You can download from [LDC](https://catalog.ldc.upenn.edu/LDC2013T19) ) 
 
 ## Results
 We provide analysis and diagnosis of model architectures and pre-trained knowledge on **six** data sets, including **five** aspects: 
@@ -92,7 +92,9 @@ You can check the above example with the web page:
 
 ## Analysis and diagnosis your own model.
 
-1) Put the result-file of your model on this path: `preComputed/ner/result/`. In order to carry out model diagnosis, at least two models' files are required. You can also choose one of the result files provided by us as the reference model.
+1) Put the result-files of your models on this path: `preComputed/ner/result/`. 
+At least two result-files are required because the model diagnosis is based on comparing with two models. 
+if you have only one result-file for a model, you can choose one result-file of a specific model provided by us (on the path: `preComputed/ner/metric/result/`).
 
 2) Put the train-set which your result-file trained on the path: `./data/`. You need to set the column delimiter of your train-set and result-file in the `main()` function of `tensorEvaluation-ner.py`.
 
