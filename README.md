@@ -44,7 +44,7 @@ The datasets utilized in our paper including:
 - OntoNotes 5.0 (You can download from [LDC](https://catalog.ldc.upenn.edu/LDC2013T19) ) 
 
 ## Results
-We provide analysis and diagnosis of model architectures and pre-trained knowledge on **six** data sets, including **five** aspects: 
+We provide analysis and diagnosis of model architectures and pre-trained knowledge on **six** data sets, and the fine-grained analysis includes **five** aspects: 
 - Holistic Results; 
 - Break-down Performance; 
 - Self-diagnosis; 
@@ -94,12 +94,12 @@ You can check the above example with the web page:
 
 1) Put the result-files of your models on this path: `preComputed/ner/result/`. 
 At least two result-files are required because the comparative-diagnosis is based on comparing with two models. 
-If you have only one result-file for a model, you can choose one result-file of a specific model provided by us (on the path: `preComputed/ner/metric/result/`).
+If you have only one result-file for a model, you can choose one result-file provided by us (on the path: `preComputed/ner/metric/result/`).
 
-2) Put the train-set which your result-file trained on the path: `./data/`. 
+2) Put the train-set (your result-file trained on) on the path.: `./data/`. 
 <!-- You need to set the column delimiter of your train-set and result-file in the `main()` function of `tensorEvaluation-ner.py`. -->
 
-3) Set the `path_data` (path of training set), `datasets[-]` (dataset name), `model1` (the first model's name), `model2` (the second model's name), `resfiles[-]` (the paths of the results) in `run_task_ner.sh` according to your data.
+3) Modify parameters in `run_task_ner.sh` to adjust to your data. Such as setting the following parameters:   `path_data` (path of training set), `datasets[-]` (dataset name), `model1` (the first model's name), `model2` (the second model's name), and `resfiles[-]` (the paths of the results).
 
 ### Note: 
 - **At least two result-files are required.**  Comparative-diagnosis is utilized to compare the strengths and weaknesses of two models, so it is necessary to input as least two model results. 
