@@ -41,7 +41,7 @@ The datasets utilized in our paper including:
 
 - CoNLL-2003 (in this repository.)
 - WNUT-2016 (in this repository.)
-- OntoNotes 5.0 (WB, MZ, BC, BN) (Yor can download from [LDC](https://catalog.ldc.upenn.edu/LDC2013T19) )
+- OntoNotes 5.0 (The domains we utilized in the paper: WB, MZ, BC, BN.) (Yor can download from [LDC](https://catalog.ldc.upenn.edu/LDC2013T19) )
 
 ## Results
 We provide analysis and diagnosis of model architectures and pre-trained knowledge on **six** data sets, including **five** aspects: 
